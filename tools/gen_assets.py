@@ -49,29 +49,68 @@ def save(img, size, addon, name, shadow=False):
     return (addon, name)
 
 
-def key_layer(W, metal, dark, shine, outline=True):
-    """A plain door key lying flat: bow on the left, bit at the bottom right."""
+HEAD = (30, 31, 35, 255)
+HEAD_RIM = (74, 76, 84, 255)
+HEAD_EDGE = (8, 8, 10, 255)
+KEY_HOLE = (34, 128)  # where the ring goes, before rotation
+
+
+def key_layer(W, metal, dark, shine, outline=True, emblem=None):
+    """A car key lying flat, like the ones on the mod logo: a black rubber head
+    with the ring hole on the left, a notched blade with a groove to the right.
+    With outline off it is a plain silhouette in the metal colour, for the
+    white menu and module icons."""
     s = W / 256
     img = Image.new("RGBA", (W, W), CLEAR)
     d = ImageDraw.Draw(img)
 
-    def body(fill, g):
-        g *= s
-        d.ellipse([26 * s - g, 84 * s - g, 114 * s + g, 172 * s + g], fill=fill)
-        d.rectangle([100 * s - g, 116 * s - g, 228 * s + g, 140 * s + g], fill=fill)
-        for x0, x1, y1 in [(166, 180, 166), (188, 200, 156), (210, 228, 172)]:
-            d.rectangle([x0 * s - g, 136 * s - g, x1 * s + g, y1 * s + g], fill=fill)
+    def p(pts):
+        return [(x * s, y * s) for x, y in pts]
 
+    # Blade: wavy cuts along both edges, the tip bevelled.
+    top = [(104, 114), (120, 114), (127, 121), (135, 114), (146, 114), (153, 121), (161, 114),
+           (172, 114), (179, 121), (187, 114), (199, 114), (206, 121), (213, 114), (222, 117)]
+    bottom = [(222, 141), (213, 142), (207, 136), (199, 142), (187, 142), (181, 135), (172, 142),
+              (161, 142), (155, 135), (146, 142), (131, 142), (125, 135), (118, 142), (104, 142)]
+    blade = p(top + [(238, 129)] + bottom)
     if outline:
-        body(dark, 4)
-    body(metal, 0)
+        d.polygon(blade, fill=metal, outline=dark, width=int(3 * s))
+        d.line(p([(110, 128), (220, 128)]), fill=dark, width=int(3 * s))
+        d.line(p([(108, 119), (200, 119)]), fill=shine, width=int(2 * s))
+    else:
+        d.polygon(blade, fill=metal)
+        d.line(p([(112, 128), (216, 128)]), fill=CLEAR, width=int(4 * s))
+
+    # Collar where the blade meets the head.
+    d.rounded_rectangle(p([(92, 106), (110, 150)]), radius=int(4 * s),
+                        fill=HEAD_EDGE if outline else metal)
+
+    # Rubber head.
     if outline:
-        d.ellipse([46 * s, 104 * s, 94 * s, 152 * s], fill=dark)
-    d.ellipse([50 * s, 108 * s, 90 * s, 148 * s], fill=CLEAR)
+        d.rounded_rectangle(p([(14, 86), (102, 170)]), radius=int(24 * s), fill=HEAD_EDGE)
+        d.rounded_rectangle(p([(18, 90), (98, 166)]), radius=int(21 * s), fill=HEAD)
+        d.rounded_rectangle(p([(24, 96), (92, 160)]), radius=int(17 * s), outline=HEAD_RIM, width=int(2 * s))
+        # Grip ridges on the back of the head.
+        for y in (106, 116, 140, 150):
+            d.line(p([(58, y), (86, y)]), fill=HEAD_RIM, width=int(2 * s))
+        if emblem:
+            star(d, 72 * s, 128 * s, 13 * s, emblem)
+    else:
+        d.rounded_rectangle(p([(18, 90), (98, 166)]), radius=int(21 * s), fill=metal)
+
+    hx, hy = KEY_HOLE
     if outline:
-        d.rectangle([104 * s, 120 * s, 222 * s, 125 * s], fill=shine)
-        d.rectangle([112 * s, 131 * s, 224 * s, 134 * s], fill=dark)
+        d.ellipse(p([(hx - 11, hy - 11), (hx + 11, hy + 11)]), fill=HEAD_EDGE)
+    d.ellipse(p([(hx - 8, hy - 8), (hx + 8, hy + 8)]), fill=CLEAR)
     return img
+
+
+def rotated(point, angle, centre=(128, 128)):
+    """Where a point of a layer lands after Image.rotate(angle) about centre."""
+    a = math.radians(angle)
+    dx, dy = point[0] - centre[0], point[1] - centre[1]
+    return (centre[0] + dx * math.cos(a) + dy * math.sin(a),
+            centre[1] - dx * math.sin(a) + dy * math.cos(a))
 
 
 def star(d, cx, cy, r, fill):
@@ -101,25 +140,48 @@ def padlock(d, cx, cy, size, fill, open_=False, hole=CLEAR, width=None):
 # --- Inventory pictures ------------------------------------------------------
 
 def item_key(name, colours, tag, master=False):
+    """A car key hanging from a split ring, with a stitched fabric tag in the
+    side's colour. Master keys have a brass blade and a gold star."""
     W = 256 * SS
     s = W / 256
-    img = canvas(256)
-    d = ImageDraw.Draw(img)
+    angle = -45
+    shift = 16  # the hanging key sits top-left of its square; move it to the middle
     metal, dark, shine = colours
+    pivot = rotated(KEY_HOLE, angle)
+    ring = (pivot[0] + shift, pivot[1] + shift)
 
-    # Split ring through the bow, and the side tag hanging off it.
-    d.line([(78 * s, 160 * s), (60 * s, 196 * s)], fill=(58, 60, 66, 255), width=int(7 * s))
-    d.rounded_rectangle([14 * s, 186 * s, 110 * s, 244 * s], radius=int(12 * s), fill=(30, 30, 34, 255))
-    d.rounded_rectangle([19 * s, 191 * s, 105 * s, 239 * s], radius=int(9 * s), fill=tag)
-    d.ellipse([54 * s, 196 * s, 68 * s, 210 * s], fill=(30, 30, 34, 255))
+    # Fabric tag hanging from the ring, behind the key.
+    tag_layer = Image.new("RGBA", (W, W), CLEAR)
+    t = ImageDraw.Draw(tag_layer)
+    edge = tuple(int(c * 0.55) for c in tag[:3]) + (255,)
+    t.rounded_rectangle([42 * s, 70 * s, 80 * s, 186 * s], radius=int(9 * s), fill=edge)
+    t.rounded_rectangle([45 * s, 73 * s, 77 * s, 183 * s], radius=int(7 * s), fill=tag)
+    # Stitching around the edge, and the loop sewn over the ring.
+    stitch = (236, 226, 196, 230)
+    for x0, y0, x1, y1 in [(50, 94, 50, 176), (72, 94, 72, 176), (50, 176, 72, 176)]:
+        steps = int(max(abs(x1 - x0), abs(y1 - y0)) / 7)
+        for i in range(steps):
+            a, b = i / steps, (i + 0.55) / steps
+            t.line([((x0 + (x1 - x0) * a) * s, (y0 + (y1 - y0) * a) * s),
+                    ((x0 + (x1 - x0) * b) * s, (y0 + (y1 - y0) * b) * s)], fill=stitch, width=int(2 * s))
+    t.line([(46 * s, 88 * s), (76 * s, 88 * s)], fill=edge, width=int(3 * s))
     if master:
-        star(d, 62 * s, 224 * s, 13 * s, WHITE)
-    else:
-        for y in (216, 226):
-            d.line([(34 * s, y * s), (90 * s, y * s)], fill=(255, 255, 255, 200), width=int(3 * s))
+        star(t, 61 * s, 134 * s, 12 * s, (250, 214, 90, 255))
+    tag_layer = tag_layer.rotate(-14, resample=Image.BICUBIC, center=(pivot[0] * s, pivot[1] * s),
+                                 translate=(shift * s, shift * s))
 
-    key = key_layer(W, metal, dark, shine).rotate(32, resample=Image.BICUBIC, center=(W / 2, W / 2))
-    img = Image.alpha_composite(img, key)
+    img = Image.alpha_composite(canvas(256), tag_layer)
+    key = key_layer(W, metal, dark, shine, emblem=(222, 178, 70, 255) if master else None)
+    img = Image.alpha_composite(img, key.rotate(angle, resample=Image.BICUBIC, center=(W / 2, W / 2),
+                                                translate=(shift * s, shift * s)))
+
+    # Split ring through the head's hole.
+    d = ImageDraw.Draw(img)
+    r = 19
+    box = [(ring[0] - r) * s, (ring[1] - r) * s, (ring[0] + r) * s, (ring[1] + r) * s]
+    d.ellipse(box, outline=STEEL[1], width=int(9 * s))
+    d.ellipse([box[0] + 2 * s, box[1] + 2 * s, box[2] - 2 * s, box[3] - 2 * s], outline=STEEL[0], width=int(5 * s))
+    d.arc([box[0] + 3 * s, box[1] + 3 * s, box[2] - 3 * s, box[3] - 3 * s], 200, 290, fill=STEEL[2], width=int(2 * s))
     return save(img, 256, "items", name, shadow=True)
 
 
@@ -146,7 +208,7 @@ def item_fob():
 
 def icon_key(name="icon_key_ca", addon="core", extra=None):
     W = 128 * SS
-    img = key_layer(W, WHITE, WHITE, WHITE, outline=False).rotate(35, resample=Image.BICUBIC, center=(W / 2, W / 2))
+    img = key_layer(W, WHITE, WHITE, WHITE, outline=False).rotate(-45, resample=Image.BICUBIC, center=(W / 2, W / 2))
     if extra:
         extra(ImageDraw.Draw(img), W / 128)
     return save(img, 128, addon, name)
@@ -199,17 +261,22 @@ def icon_pick():
 def module_keyset():
     W = 128 * SS
     img = canvas(128)
-    for angle, dx in ((60, -16), (35, 0), (10, 16)):
-        k = key_layer(W, WHITE, WHITE, WHITE, outline=False).resize((int(W * 0.8), int(W * 0.8)), Image.LANCZOS)
-        layer = Image.new("RGBA", (W, W), CLEAR)
-        layer.paste(k, (int(W * 0.1 + dx * SS), int(W * 0.1)), k)
-        img = Image.alpha_composite(img, layer.rotate(angle, resample=Image.BICUBIC, center=(W / 2, W / 2)))
+    # Three keys fanned out from one ring at the top left.
+    s = W / 256
+    hole = (KEY_HOLE[0] * s, KEY_HOLE[1] * s)
+    ring = (30 * SS, 30 * SS)
+    for angle in (-15, -45, -75):
+        k = key_layer(W, WHITE, WHITE, WHITE, outline=False)
+        img = Image.alpha_composite(img, k.rotate(angle, resample=Image.BICUBIC, center=hole,
+                                                  translate=(ring[0] - hole[0], ring[1] - hole[1])))
+    d = ImageDraw.Draw(img)
+    d.ellipse([ring[0] - 14 * SS, ring[1] - 14 * SS, ring[0] + 14 * SS, ring[1] + 14 * SS], outline=WHITE, width=int(5 * SS))
     return save(img, 128, "modules", "module_keyset_ca")
 
 
 def module_master():
     W = 128 * SS
-    img = key_layer(W, WHITE, WHITE, WHITE, outline=False).rotate(35, resample=Image.BICUBIC, center=(W / 2, W / 2))
+    img = key_layer(W, WHITE, WHITE, WHITE, outline=False).rotate(-45, resample=Image.BICUBIC, center=(W / 2, W / 2))
     star(ImageDraw.Draw(img), 96 * SS, 30 * SS, 26 * SS, WHITE)
     return save(img, 128, "modules", "module_master_ca")
 
@@ -258,6 +325,27 @@ def chirp(name, beeps, rate=44100):
     print(name + ".wav ok")
 
 
+def preview():
+    """docs/images/items.png: every inventory picture in a row, labelled."""
+    names = ["key_west_ca", "key_east_ca", "key_indep_ca", "key_civ_ca",
+             "master_west_ca", "master_east_ca", "master_indep_ca", "master_civ_ca", "fob_ca"]
+    labels = ["BLUFOR key", "OPFOR key", "Independent key", "Civilian key",
+              "BLUFOR master", "OPFOR master", "Independent master", "Civilian master", "Key fob"]
+    cell, pad = 180, 12
+    sheet = Image.new("RGBA", (cell * len(names), cell + 34), (32, 34, 38, 255))
+    d = ImageDraw.Draw(sheet)
+    try:
+        font = ImageFont.truetype(r"C:\Windows\Fonts\arial.ttf", 15)
+    except OSError:
+        font = ImageFont.load_default()
+    for i, (name, label) in enumerate(zip(names, labels)):
+        im = Image.open(os.path.join(PNG, name + ".png")).convert("RGBA").resize((cell - 2 * pad, cell - 2 * pad), Image.LANCZOS)
+        sheet.alpha_composite(im, (i * cell + pad, pad))
+        d.text((i * cell + cell / 2, cell + 12), label, font=font, fill=(220, 222, 226, 255), anchor="mm")
+    sheet.convert("RGB").save(os.path.join(ROOT, "docs", "images", "items.png"))
+    print("items.png ok")
+
+
 def convert(items):
     candidates = [
         r"E:\SteamLibrary\steamapps\common\Arma 3 Tools\ImageToPAA\ImageToPAA.exe",
@@ -288,5 +376,6 @@ if __name__ == "__main__":
     items += [module_keyset(), module_master(), module_lock()]
     items += logo()
     convert(items)
+    preview()
     chirp("fob_lock", [(2900, 0.07, 0.06), (2900, 0.07, 0.0)])
     chirp("fob_unlock", [(2500, 0.13, 0.0)])
