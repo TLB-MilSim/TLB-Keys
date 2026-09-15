@@ -223,26 +223,17 @@ def module_lock():
 # --- Mod logo ----------------------------------------------------------------
 
 def logo():
-    W = 256 * SS
-    s = W / 256
-    img = canvas(256)
-    d = ImageDraw.Draw(img)
-    d.ellipse([6 * s, 6 * s, 250 * s, 250 * s], fill=(222, 178, 70, 255))
-    d.ellipse([16 * s, 16 * s, 240 * s, 240 * s], fill=(28, 30, 34, 255))
-    key = key_layer(W, *BRASS).resize((int(W * 0.7), int(W * 0.7)), Image.LANCZOS)
-    layer = Image.new("RGBA", (W, W), CLEAR)
-    layer.paste(key, (int(W * 0.15), int(W * 0.08)), key)
-    img = Image.alpha_composite(img, layer.rotate(20, resample=Image.BICUBIC, center=(W / 2, W / 2)))
-    d = ImageDraw.Draw(img)
-    try:
-        font = ImageFont.truetype(r"C:\Windows\Fonts\arialbd.ttf", int(44 * s))
-    except OSError:
-        font = ImageFont.load_default()
-    d.text((128 * s, 190 * s), "TLB KEYS", font=font, fill=(236, 238, 242, 255), anchor="mm")
-    out = [save(img, 256, "main", "logo_ca")]
-    img.resize((64, 64), Image.LANCZOS).save(os.path.join(PNG, "logo_small_ca.png"))
-    out.append(("main", "logo_small_ca"))
-    return out
+    """The mod logo is artwork (tools/logo_source.png), only scaled here to the
+    power-of-two sizes Arma wants, and copied to the docs."""
+    src = Image.open(os.path.join(ROOT, "tools", "logo_source.png")).convert("RGBA")
+    side = max(src.size)
+    square = Image.new("RGBA", (side, side), CLEAR)
+    square.paste(src, ((side - src.width) // 2, (side - src.height) // 2))
+
+    square.resize((512, 512), Image.LANCZOS).save(os.path.join(ROOT, "docs", "images", "logo.png"))
+    square.resize((256, 256), Image.LANCZOS).save(os.path.join(PNG, "logo_ca.png"))
+    square.resize((64, 64), Image.LANCZOS).save(os.path.join(PNG, "logo_small_ca.png"))
+    return [("main", "logo_ca"), ("main", "logo_small_ca")]
 
 
 # --- Key fob chirps ------------------------------------------------------------
