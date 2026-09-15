@@ -1,0 +1,11 @@
+name = "TLB Keys";
+author = "TLB MilSim";
+description = "Vehicle keys that fit the mission. Lock a vehicle for your side, your squad or one key, cut spare keys, program key fobs and hand keys to team mates, all from the ACE interaction menu. Replaces ACE's vehicle locking. Requires CBA_A3 and ACE3. Licensed APL-ND.";
+picture = "\tlb_keys\addons\main\data\logo_ca.paa";
+logo = "\tlb_keys\addons\main\data\logo_ca.paa";
+logoSmall = "\tlb_keys\addons\main\data\logo_small_ca.paa";
+logoOver = "\tlb_keys\addons\main\data\logo_ca.paa";
+tooltip = "TLB Keys";
+tooltipOwned = "TLB Keys";
+overview = "Vehicles without a key are open. Lock one and choose who else gets in: everyone on your side with a key, only your squad, or only keys you pair to it. Cut spare keys from blank ones, change the locks when a key goes missing, program a key fob to lock from a distance, and carry a master key that opens every vehicle of your side. Mission makers sync vehicles, crates and units to a Key Set module to hand out keys before the mission starts. Pick locks with TLB Interactions or ACE's lockpick.";
+action = "https://github.com/TLB-MilSim/TLB-Keys";

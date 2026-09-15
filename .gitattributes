@@ -1,0 +1,18 @@
+# Arma textures, images, sounds and packed files are binary - never touch line endings.
+*.paa binary
+*.png binary
+*.jpg binary
+*.wav binary
+*.ogg binary
+*.pbo binary
+*.bikey binary
+*.bisign binary
+
+# Text files are normalised in the repository.
+*.sqf text
+*.hpp text
+*.cpp text
+*.xml text
+*.md text
+*.py text
+*.ps1 text

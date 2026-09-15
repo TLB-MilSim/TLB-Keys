@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TLBKeys">
+    <Package name="modules">
+        <Container name="Modules">
+            <Key ID="STR_tlb_keys_modules_category">
+                <English>TLB Keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_side">
+                <English>Side</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_side_auto">
+                <English>Auto</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_side_unit">
+                <English>Each unit's own side</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_side_vehicle">
+                <English>Vehicle's faction</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_wholeGroup">
+                <English>Whole group</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_wholeGroup_desc">
+                <English>Every member of a synced unit's group gets the keys, not only the synced unit.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_respawn">
+                <English>Give again on respawn</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_respawn_desc">
+                <English>Units get the keys back after respawning, unless their respawn loadout already has them.</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_modules_keySet">
+                <English>Key Set</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_desc">
+                <English>One set of keys for everything synced to it. Synced vehicles take the set's mode, side and code; synced crates get keys cut to it; synced units start with a key. Modules and vehicle attributes with the same key set name share one code.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_name">
+                <English>Key set name</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_name_desc">
+                <English>Shown on the keys, e.g. Motor Pool. Modules and vehicles with the same name share their keys. Empty: the keys are named after the first vehicle.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_mode">
+                <English>Opens for</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_mode_desc">
+                <English>The set's keys always open the vehicles. Every key of the side, or keys carried by the first synced unit's squad, can open them too.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_side_desc">
+                <English>The side the vehicles and keys belong to. Auto: the first synced unit's side, else the first vehicle's faction.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_manage">
+                <English>Who may manage them</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_manage_desc">
+                <English>Who can change these vehicles' mode, locks and keys in the mission. Master keys always can.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_manage_0">
+                <English>Master keys only</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_manage_1">
+                <English>Anyone whose keys fit</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_locked">
+                <English>Start locked</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_locked_desc">
+                <English>Synced vehicles start locked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_keyType">
+                <English>Key type</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_keyType_desc">
+                <English>What synced units and crates get.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_keyType_0">
+                <English>Vehicle key</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_keyType_1">
+                <English>Key fob</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_keyType_2">
+                <English>Key and key fob</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_crateKeys">
+                <English>Keys per crate</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_keySet_crateKeys_desc">
+                <English>How many of each key type a synced crate gets. 0 for none.</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_modules_masterKey">
+                <English>Master Key</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_masterKey_desc">
+                <English>Every synced unit starts with a master key, which opens and manages every vehicle of its side however it is locked. For Zeus, commanders and the motor pool.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_masterKey_side_desc">
+                <English>Which side's master key. Each unit's own side by default.</English>
+            </Key>
+        </Container>
+
+        <Container name="Attributes">
+            <Key ID="STR_tlb_keys_modules_attr_category">
+                <English>TLB Keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_mode">
+                <English>Opens for</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_mode_desc">
+                <English>Gives the vehicle keys when the mission starts, managed by master keys only. None: it has no keys until a player locks it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_modeNone">
+                <English>None - a player can lock it</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_side_desc">
+                <English>Whose keys fit. Vehicle's faction: the side it was built for.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_set">
+                <English>Key set</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_set_desc">
+                <English>Vehicles and Key Set modules with the same name share their keys. With no mode chosen, the vehicle opens only for the set's keys.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_locked">
+                <English>Start locked</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_locked_desc">
+                <English>Starts locked. A vehicle with no keys stays locked, and only a master key or a lockpick opens it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_pickable">
+                <English>Lock can be picked</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_attr_pickable_desc">
+                <English>Off: nobody can pick this vehicle's lock.</English>
+            </Key>
+        </Container>
+
+        <Container name="Zeus">
+            <Key ID="STR_tlb_keys_modules_zeusLock">
+                <English>Lock / Unlock Vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeusReset">
+                <English>Remove Vehicle Keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeusKey">
+                <English>Key for Vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeusMaster">
+                <English>Give Master Key</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeus_noVehicle">
+                <English>Place it on a vehicle.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeus_noUnit">
+                <English>Place it on a living unit.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeus_locked">
+                <English>%1 locked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeus_unlocked">
+                <English>%1 unlocked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeus_reset">
+                <English>%1: keys removed, unlocked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeus_key">
+                <English>A key for %1 is on the ground beside it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_modules_zeus_master">
+                <English>%1 has a master key.</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

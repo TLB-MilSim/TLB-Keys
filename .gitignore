@@ -1,0 +1,26 @@
+# Build output
+/build/
+/release/
+
+# Steam Workshop gallery slides, uploaded to Steam rather than kept in the repo
+/workshop/
+
+# Intermediate images from the asset generator
+/tools/.png/
+
+# Packed and signed artefacts, and signing keys (only public keys in keys/)
+*.pbo
+*.bisign
+*.biprivatekey
+*.bikey
+!keys/*.bikey
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Editor and OS clutter
+*.bak
+*.tmp
+Thumbs.db
+.vscode/
