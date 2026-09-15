@@ -166,9 +166,12 @@ if (-not $NoBinarize) {
 }
 Write-Host ""
 
-foreach ($path in @($ReleaseDir, $Staging)) {
-    if (Test-Path $path) { Remove-Item -Recurse -Force $path }
+# Empty the release folder rather than deleting it: the Arma 3 Launcher holds
+# its folders open for as long as the mod is listed there as a local mod.
+if (Test-Path $ReleaseDir) {
+    Get-ChildItem -Path $ReleaseDir -Recurse -File -Force | Remove-Item -Force
 }
+if (Test-Path $Staging) { Remove-Item -Recurse -Force $Staging }
 New-Item -ItemType Directory -Force -Path $AddonsOut | Out-Null
 
 # Stage every addon before compiling any of them: components include headers
