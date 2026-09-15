@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TLBKeys">
+    <Package name="items">
+        <Container name="Keys">
+            <Key ID="STR_tlb_keys_items_key_west">
+                <English>Vehicle Key (BLUFOR)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_key_east">
+                <English>Vehicle Key (OPFOR)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_key_indep">
+                <English>Vehicle Key (Independent)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_key_civ">
+                <English>Vehicle Key (Civilian)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_key_desc">
+                <English>Blank, it opens its side's vehicles that are locked for the side or for your squad. Cut to a vehicle, it opens only the vehicles that accept its cut. Inspect it from ACE self-interaction.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_master_west">
+                <English>Master Key (BLUFOR)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_master_east">
+                <English>Master Key (OPFOR)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_master_indep">
+                <English>Master Key (Independent)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_master_civ">
+                <English>Master Key (Civilian)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_master_desc">
+                <English>Opens and manages every vehicle of its side, however it is locked. For Zeus, commanders and the motor pool.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_fob">
+                <English>Key Fob</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_fob_desc">
+                <English>Blank until programmed at a vehicle. Opens the vehicles it is paired to, and locks or unlocks them from a distance with a chirp.</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

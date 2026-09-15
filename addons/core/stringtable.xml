@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TLBKeys">
+    <Package name="core">
+        <Container name="Settings">
+            <Key ID="STR_tlb_keys_settings_category">
+                <English>TLB Keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_settings_general">
+                <English>General</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_settings_claim">
+                <English>Locking a vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_settings_keys">
+                <English>Keys and management</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_settings_master">
+                <English>Master keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_settings_fob">
+                <English>Key fobs</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_settings_pick">
+                <English>Lockpicking</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_core_set_enabled">
+                <English>Enable TLB Keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_enabled_desc">
+                <English>Vehicle keys, locks and their ACE menus. Off hides every TLB Keys action and lets every vehicle start, without unloading the mod.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_replaceAce">
+                <English>Replace ACE vehicle locking</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_replaceAce_desc">
+                <English>Hides ACE's own lock, unlock and lockpick actions, and takes over ACE's start-of-mission locking and inventory lock. Off shows ACE's actions next to these.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_acceptAceKeys">
+                <English>Accept ACE keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_acceptAceKeys_desc">
+                <English>ACE's side keys work as blank side keys, and ACE's master key as a master key for every side.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_startState">
+                <English>Vehicles without keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_startState_desc">
+                <English>What happens to a vehicle the mission left locked but gave no keys. Start unlocked: nobody finds a vehicle no key opens. Keep: the mission's lock stays, and only a master key or a lockpick opens it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_startState_0">
+                <English>Start unlocked</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_startState_1">
+                <English>Keep the mission's lock</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_lockInventory">
+                <English>Lock the inventory</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_lockInventory_desc">
+                <English>A locked vehicle's cargo cannot be opened from outside by anyone whose keys do not fit.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_ignitionLock">
+                <English>Ignition lock</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_ignitionLock_desc">
+                <English>A player whose keys do not fit cannot start the engine of a vehicle that has keys, even from the driver's seat. Hotwired vehicles and AI drivers are not affected.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_insideUnlock">
+                <English>Lock and unlock from inside</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_insideUnlock_desc">
+                <English>Anyone in a seat can lock and unlock the vehicle without a key, like the door handle of a real car.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_lockTime">
+                <English>Lock and unlock time (s)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_lockTime_desc">
+                <English>How long locking or unlocking by hand at the vehicle takes. 0 is instant. From a seat and with a key fob it is always instant.</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_core_set_allowSide">
+                <English>Allow: every key of the side</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowSide_desc">
+                <English>Vehicles can be locked so every blank key of the owner's side opens them. Leave only one way on to force it; with more than one, the first player to lock a vehicle chooses.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowSquad">
+                <English>Allow: the owner's squad</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowSquad_desc">
+                <English>Vehicles can be locked so they open for members of the owner's squad carrying a blank key of the side.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowPaired">
+                <English>Allow: paired keys only</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowPaired_desc">
+                <English>Vehicles can be locked so only keys cut to them open them. The owner's blank key is cut as it is locked, and spare keys are cut from blank ones.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_claimKey">
+                <English>Locking a vehicle first needs</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_claimKey_desc">
+                <English>What a player must carry to lock a vehicle nobody has locked yet. Locking to paired keys always needs a blank key to cut. A master key always can.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_claimKey_0">
+                <English>Nothing</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_claimKey_1">
+                <English>A blank key of their side</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_claimWho">
+                <English>Who may lock a vehicle first</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_claimWho_desc">
+                <English>Who can lock a vehicle nobody has locked yet, and so become its owner. A master key always can.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_claimWho_0">
+                <English>Anyone</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_claimWho_1">
+                <English>Group leaders</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_claimWho_2">
+                <English>Master key holders</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_squadFollowsOwner">
+                <English>Squad vehicles open for</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_squadFollowsOwner_desc">
+                <English>Which squad a vehicle locked for the squad opens for: the one it was locked for, or whichever squad its owner is in now.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_squadFollowsOwner_0">
+                <English>The squad it was locked for</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_squadFollowsOwner_1">
+                <English>The owner's current squad</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_core_set_managePerms">
+                <English>Who may manage a vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_managePerms_desc">
+                <English>Who, besides master keys, can change who a vehicle opens for, cut keys, change its locks, name it, give it away or release it. It always takes keys that fit. A vehicle without an owner is managed by anyone whose keys fit.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_managePerms_0">
+                <English>The owner</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_managePerms_1">
+                <English>The owner and the squad leader</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_managePerms_2">
+                <English>Anyone whose keys fit</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowSpare">
+                <English>Allow spare keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowSpare_desc">
+                <English>Vehicles can have blank keys cut to them as spares, and keys cut for another vehicle re-cut.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowWipe">
+                <English>Allow wiping keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowWipe_desc">
+                <English>A cut key can be wiped blank from ACE self-interaction, making it a side key again.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_pairedAsSide">
+                <English>Cut keys still open side vehicles</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_pairedAsSide_desc">
+                <English>A key cut to a vehicle keeps opening its side's vehicles locked for the side or the squad. Off: cutting a key ties it to the vehicles it was cut for.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowHandOver">
+                <English>Allow handing over keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowHandOver_desc">
+                <English>An ACE action on other units hands them a key directly.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_ownerTimeout">
+                <English>Owner leaves: release after (min)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_ownerTimeout_desc">
+                <English>When an owner has been off the server this long, their vehicles lose their owner. The locks stay, and anyone whose keys fit may manage them. 0 keeps owners for the whole mission.</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_core_set_masterEnabled">
+                <English>Master keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_masterEnabled_desc">
+                <English>Master keys open and manage every vehicle of their side, however it is locked. Off: master keys open nothing.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_masterInArsenal">
+                <English>Master keys in the ACE Arsenal</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_masterInArsenal_desc">
+                <English>Off hides master keys in the ACE Arsenal from everyone but Zeus, so they only come from modules, Zeus or crates. A unit can also leave this on and blacklist them in its own arsenal.</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_core_set_allowFobs">
+                <English>Allow key fobs</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowFobs_desc">
+                <English>Key fobs can be programmed to vehicles, open them like a key, and lock and unlock them from a distance.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_fobRange">
+                <English>Key fob range (m)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_fobRange_desc">
+                <English>How far a key fob reaches.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_fobSound">
+                <English>Key fob chirp</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_fobSound_desc">
+                <English>Vehicles chirp when locked or unlocked with a key fob: twice to lock, once to unlock.</English>
+            </Key>
+
+            <Key ID="STR_tlb_keys_core_set_lockpickEnabled">
+                <English>Vehicle lockpicking</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_lockpickEnabled_desc">
+                <English>Locked vehicles can be picked. A vehicle whose Eden attribute says it cannot be picked, or whose ace_vehiclelock_lockpickStrength is -1, never can.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_useTlbi">
+                <English>Use TLB Interactions</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_useTlbi_desc">
+                <English>With TLB Interactions loaded, vehicle locks are picked on its lockpicking board with a lock pick kit or a paperclip. Off, or without it, ACE's lockpick is used.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_lockpickTime">
+                <English>ACE lockpick time (s)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_lockpickTime_desc">
+                <English>How long picking a lock with ACE's lockpick takes, unless the vehicle sets its own ace_vehiclelock_lockpickStrength.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_hotwire">
+                <English>Picked vehicles can be driven</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_hotwire_desc">
+                <English>A picked vehicle is hotwired: the ignition lock lets it start until someone with a key locks it again.</English>
+            </Key>
+        </Container>
+
+        <Container name="Names">
+            <Key ID="STR_tlb_keys_core_mode_0">
+                <English>Every key of the side</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_mode_1">
+                <English>The owner's squad</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_mode_2">
+                <English>Paired keys only</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_side_0">
+                <English>OPFOR</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_side_1">
+                <English>BLUFOR</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_side_2">
+                <English>Independent</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_side_3">
+                <English>Civilian</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_side_none">
+                <English>no side</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_key_blank">
+                <English>%1 (blank)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_key_cut">
+                <English>%1 #%2</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_key_cutLabel">
+                <English>%1 #%2 - %3</English>
+            </Key>
+        </Container>
+
+        <Container name="Actions">
+            <Key ID="STR_tlb_keys_core_action_vehicle">
+                <English>Vehicle Keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_myKeys">
+                <English>Vehicle Keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_give">
+                <English>Hand over key</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_lock">
+                <English>Lock</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_unlock">
+                <English>Unlock</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_claimSide">
+                <English>Lock for %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_claimSquad">
+                <English>Lock for my squad</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_claimPaired">
+                <English>Lock to my key</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_manage">
+                <English>Manage keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_pick">
+                <English>Pick lock</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_pickKit">
+                <English>With lock pick kit</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_pickClip">
+                <English>With paperclip</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_pickAce">
+                <English>With lockpick</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_check">
+                <English>Check lock</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_mode">
+                <English>Opens for: %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_cut">
+                <English>Cut keys</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_cutBlank">
+                <English>Cut a spare from %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_recut">
+                <English>Re-cut %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_program">
+                <English>Program %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_changeLocks">
+                <English>Change locks</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_rename">
+                <English>Name vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_transfer">
+                <English>Give ownership to</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_release">
+                <English>Release vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_inspect">
+                <English>Inspect</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_label">
+                <English>Label key</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_wipe">
+                <English>Wipe blank</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_fobLock">
+                <English>Lock %1 (%2 m)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_fobUnlock">
+                <English>Unlock %1 (%2 m)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_progress_locking">
+                <English>Locking...</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_progress_unlocking">
+                <English>Unlocking...</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_progress_picking">
+                <English>Picking the lock...</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_rename_code">
+                <English>Label this key</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_rename_vehicle">
+                <English>Name this vehicle</English>
+            </Key>
+        </Container>
+
+        <Container name="Check lock">
+            <Key ID="STR_tlb_keys_core_info_locked">
+                <English>Locked</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_unlocked">
+                <English>Unlocked</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_none">
+                <English>No keys yet: anyone allowed can lock it and choose who it opens for.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_noneLocked">
+                <English>Locked, with no keys: only a master key or a lockpick opens it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_side">
+                <English>Opens for every %1 key.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_squad">
+                <English>Opens for %1 keys carried by %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_unknownSquad">
+                <English>a squad that no longer exists</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_paired">
+                <English>Opens only for keys cut to it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_owner">
+                <English>Managed by: %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_ownerMaster">
+                <English>master keys only</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_ownerNobody">
+                <English>anyone whose keys fit</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_codes">
+                <English>Takes keys cut to: %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_hotwired">
+                <English>Hotwired: it starts without a key until it is locked again.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_accessManage">
+                <English>Your keys open it, and you can manage it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_accessUse">
+                <English>Your keys open it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_accessNone">
+                <English>None of your keys fit.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_info_accessOpen">
+                <English>It has no keys yet.</English>
+            </Key>
+        </Container>
+
+        <Container name="Inspect">
+            <Key ID="STR_tlb_keys_core_inspect_master">
+                <English>Opens and manages every %1 vehicle, however it is locked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_masterAll">
+                <English>Opens and manages every vehicle, however it is locked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_masterOff">
+                <English>Master keys are switched off on this server: it opens nothing.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_blank">
+                <English>Blank. Opens %1 vehicles locked for the side, and for your squad. Cut it at a vehicle to pair it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_blankFob">
+                <English>Blank. Program it at a vehicle under Manage keys.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_cut">
+                <English>Cut to code #%1.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_fob">
+                <English>Locks and unlocks its vehicles from up to %1 m.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_opens">
+                <English>Opens %1 vehicle(s) right now:</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_opensNothing">
+                <English>Fits no vehicle: its locks were changed, or it was released.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_opensNothingBlank">
+                <English>No vehicle is locked for it right now.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_inspect_more">
+                <English>...and %1 more.</English>
+            </Key>
+        </Container>
+
+        <Container name="Messages">
+            <Key ID="STR_tlb_keys_core_msg_claimedSide">
+                <English>%1 locked. Every %2 key opens it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_claimedSquad">
+                <English>%1 locked for %2. Their keys open it.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_claimedPaired">
+                <English>%1 locked. Your key is cut to it: %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_locked">
+                <English>%1 locked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_unlocked">
+                <English>%1 unlocked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_modeChanged">
+                <English>%1 now opens for: %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_needBlank">
+                <English>You need a blank key to cut first, or you would lock yourself out.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_cut">
+                <English>%1 now opens %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_locksChanged">
+                <English>Locks changed on %1. %2 of your keys re-cut; every other key cut for it no longer fits.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_transferred">
+                <English>%1 now belongs to %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_transferredTo">
+                <English>%2 gave you %1.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_released">
+                <English>%1 released: no keys, no owner, unlocked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_renamed">
+                <English>Vehicle named %1.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_labelled">
+                <English>Key #%1 labelled "%2".</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_wiped">
+                <English>Wiped: %1.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_received">
+                <English>You now have %1.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_receivedFrom">
+                <English>%2 handed you %1.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_handed">
+                <English>Handed %1 to %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_noRoom">
+                <English>No room for %1: it is on the ground at your feet.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_ignition">
+                <English>%1: your keys do not fit the ignition.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_inventoryLocked">
+                <English>Locked. Your keys do not fit.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_picked">
+                <English>%1: lock picked.</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>
