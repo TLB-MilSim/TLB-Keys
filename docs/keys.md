@@ -13,6 +13,7 @@ switched off where you play.
 - [Managing a vehicle](#managing-a-vehicle)
 - [Your keys](#your-keys)
 - [Key fobs](#key-fobs)
+- [Key bindings](#key-bindings)
 - [Handing over a key](#handing-over-a-key)
 - [Master keys](#master-keys)
 - [Lockpicking](#lockpicking)
@@ -100,8 +101,31 @@ Afterwards it opens that vehicle like a key.
 
 With a programmed fob in your pocket, ACE self-interaction → *Vehicle Keys* lists
 every vehicle it is paired to within 15 m (the server can change the range).
-*Lock* and *Unlock* work instantly, and the vehicle chirps: twice to lock, once
-to unlock.
+The same buttons are under the fob's own entry in that menu. *Lock* and
+*Unlock* work instantly, and the vehicle chirps: twice to lock, once to unlock.
+
+## Key bindings
+
+Lock and unlock without opening the ACE menu. Bind the keys under *Options →
+Controls → Configure Addons → TLB Keys*. They start unbound.
+
+| Binding | What it does |
+| --- | --- |
+| **Lock/unlock nearest vehicle** | In a seat: the vehicle you are in. Outside: the nearest vehicle any of your keys open, within 5 m of its side. With a key fob programmed to it, from as far as the fob reaches, with a chirp. |
+| **Lock/unlock with key slot 1 / 2 / 3** | The same, but only with the key in that slot. |
+
+To put a key in a slot, open ACE self-interaction → *Vehicle Keys*, pick the
+key, then *Key slot* and the slot. A key is in one slot at a time, and the key
+list shows which slot it is in. Slots are remembered for the mission, even after
+respawning or reconnecting.
+
+Carrying keys to two vehicles? The nearest-vehicle binding picks whichever of
+them is closest, so walking up to either and pressing it is enough. Slots are
+for choosing, say, your own car's fob on one binding and the squad truck's key
+on another.
+
+The server decides which kinds of vehicle use keys at all, so on some servers
+boats or aircraft have no keys.
 
 ## Handing over a key
 

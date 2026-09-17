@@ -24,7 +24,7 @@ if (tlb_keys_core_allowFobs) then {
     if (_fobCodes isNotEqualTo []) then {
         {
             private _veh = _x;
-            if (alive _veh && {((_veh getVariable ["tlb_keys_codes", []]) arrayIntersect _fobCodes) isNotEqualTo []}) then {
+            if (alive _veh && {[_veh] call tlb_keys_core_fnc_isKeyed} && {((_veh getVariable ["tlb_keys_codes", []]) arrayIntersect _fobCodes) isNotEqualTo []}) then {
                 private _lock = (locked _veh) in [0, 1];
                 _actions pushBack [
                     [
@@ -72,6 +72,9 @@ private _unique = [];
     private _text = [_class, _code] call tlb_keys_core_fnc_keyName;
     private _count = _counts get format ["%1:%2", _class, _code];
     if (_count > 1) then { _text = format ["%1 (x%2)", _text, _count] };
+
+    private _slotIndex = tlb_keys_core_slots find [_class, _code];
+    if (_slotIndex != -1) then { _text = format [localize "STR_tlb_keys_core_key_inSlot", _text, _slotIndex + 1] };
 
     private _cfg = configFile >> "CfgMagazines" >> _class;
     if (!isClass _cfg) then { _cfg = configFile >> "CfgWeapons" >> _class };

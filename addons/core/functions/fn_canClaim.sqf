@@ -16,6 +16,7 @@
 params ["_unit", "_veh", "_mode"];
 
 if (!tlb_keys_core_enabled) exitWith { false };
+if !([_veh] call tlb_keys_core_fnc_isKeyed) exitWith { false };
 if ((_veh getVariable ["tlb_keys_mode", MODE_NONE]) != MODE_NONE) exitWith { false };
 if !([tlb_keys_core_allowSide, tlb_keys_core_allowSquad, tlb_keys_core_allowPaired] select _mode) exitWith { false };
 

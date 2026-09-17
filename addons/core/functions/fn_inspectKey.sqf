@@ -18,7 +18,7 @@ params ["_unit", "_key"];
 _key params ["_class", "_type", "_side", "_code"];
 
 private _lines = [format ["<t size='1.2' font='PuristaMedium'>%1</t>", [_class, _code] call tlb_keys_core_fnc_keyName]];
-private _assigned = vehicles select {alive _x && {(_x getVariable ["tlb_keys_mode", MODE_NONE]) != MODE_NONE}};
+private _assigned = vehicles select {alive _x && {(_x getVariable ["tlb_keys_mode", MODE_NONE]) != MODE_NONE} && {[_x] call tlb_keys_core_fnc_isKeyed}};
 
 private _opens = switch (true) do {
     case (_type == "master"): {

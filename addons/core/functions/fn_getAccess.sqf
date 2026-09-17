@@ -14,16 +14,17 @@
  * Arguments:
  * 0: Unit <OBJECT>
  * 1: Vehicle <OBJECT>
+ * 2: Only these keys, as fn_keys returns them <ARRAY> (default: every key carried)
  *
  * Return Value:
  * ACCESS_NONE, ACCESS_USE or ACCESS_MANAGE <NUMBER>
  */
 
-params [["_unit", objNull, [objNull]], ["_veh", objNull, [objNull]]];
+params [["_unit", objNull, [objNull]], ["_veh", objNull, [objNull]], "_onlyKeys"];
 
 if (isNull _unit || {isNull _veh} || {!tlb_keys_core_enabled}) exitWith { ACCESS_NONE };
 
-private _keys = [_unit] call tlb_keys_core_fnc_keys;
+private _keys = if (isNil "_onlyKeys") then { [_unit] call tlb_keys_core_fnc_keys } else { _onlyKeys };
 private _mode = _veh getVariable ["tlb_keys_mode", MODE_NONE];
 private _side = _veh getVariable ["tlb_keys_side", -1];
 
