@@ -58,6 +58,7 @@ class CfgFunctions {
             class cutKey {};
             class giveKey {};
             class takeKey {};
+            class restoreKeys {};
             class handOver {};
             class addKeyForVehicle {};
 

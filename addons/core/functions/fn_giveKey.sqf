@@ -28,9 +28,15 @@ if (!local _unit) exitWith {
 
 private _name = [_class, _code] call tlb_keys_core_fnc_keyName;
 
-if (_unit canAdd [_class, 1]) then {
-    _unit addMagazine [_class, _code];
+// Add first and check the key arrived, rather than asking canAdd beforehand:
+// canAdd can say no to a key that fits, which put keys on the ground.
+private _fnc_count = {
+    {(_x select 0) == _class && {(_x select 1) == _code} && {!(_x select 2)}} count magazinesAmmoFull _unit
+};
+private _before = call _fnc_count;
+_unit addMagazine [_class, _code];
 
+if ((call _fnc_count) > _before) then {
     if (!_silent) then {
         private _text = if (_from == "") then {
             format [localize "STR_tlb_keys_core_msg_received", _name]
