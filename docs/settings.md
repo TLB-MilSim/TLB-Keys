@@ -17,6 +17,8 @@ settings files.
 - [Master keys](#master-keys)
 - [Key fobs](#key-fobs)
 - [Lockpicking](#lockpicking)
+- [Vehicle types](#vehicle-types)
+- [Key bindings](#key-bindings)
 - [Example settings file](#example-settings-file)
 
 ---
@@ -83,10 +85,34 @@ on to force it. Leave several on and the first player to lock a vehicle chooses.
 | ACE lockpick time (s) | `tlb_keys_core_lockpickTime` | 20 | 1 to 120 | How long ACE's lockpick takes, unless the vehicle sets `ace_vehiclelock_lockpickStrength`. |
 | Picked vehicles can be driven | `tlb_keys_core_hotwire` | on | on / off | A picked vehicle is hotwired: the ignition lock lets it start until someone with a key locks it again. |
 
+## Vehicle types
+
+Which kinds of vehicle use keys at all. A type that is switched off gets no TLB
+Keys menu and no ignition or inventory lock, modules and vehicle attributes give
+it no keys, and ACE's own lock actions stay available on it.
+
+| Setting | Variable | Default | Range | Effect |
+| --- | --- | --- | --- | --- |
+| Keys for cars, trucks and MRAPs | `tlb_keys_core_vehCars` | on | on / off | Cars, trucks, MRAPs and motorcycles. |
+| Keys for wheeled APCs | `tlb_keys_core_vehApcs` | on | on / off | Wheeled armoured personnel carriers. |
+| Keys for tanks and tracked vehicles | `tlb_keys_core_vehTanks` | on | on / off | Tanks, tracked APCs and self-propelled artillery. |
+| Keys for helicopters | `tlb_keys_core_vehHelicopters` | on | on / off | Helicopters. |
+| Keys for planes | `tlb_keys_core_vehPlanes` | on | on / off | Planes and VTOLs. |
+| Keys for boats | `tlb_keys_core_vehBoats` | on | on / off | Boats and submersibles. |
+
+Static weapons and UAVs never use keys.
+
+## Key bindings
+
+| Setting | Variable | Default | Range | Effect |
+| --- | --- | --- | --- | --- |
+| Allow key bindings | `tlb_keys_core_allowKeybinds` | on | on / off | Players can lock and unlock with key bindings instead of the ACE menu. Each player binds the keys under *Controls → Configure Addons → TLB Keys*. |
+| Key reach (m) | `tlb_keys_core_keyRange` | 5 | 2 to 15 | How far from the side of a vehicle a key works with the key bindings. A key fob programmed to the vehicle reaches the key fob range instead. |
+
 ## Example settings file
 
-A unit that only uses paired keys, keeps master keys for Zeus, and wants
-locking to take a moment:
+A unit that only uses paired keys, keeps master keys for Zeus, wants locking
+to take a moment, and leaves boats and planes without keys:
 
 ```sqf
 force tlb_keys_core_allowSide = false;
@@ -96,4 +122,6 @@ force tlb_keys_core_claimWho = 1;
 force tlb_keys_core_masterInArsenal = false;
 force tlb_keys_core_lockTime = 2;
 force tlb_keys_core_ownerTimeout = 15;
+force tlb_keys_core_vehBoats = false;
+force tlb_keys_core_vehPlanes = false;
 ```

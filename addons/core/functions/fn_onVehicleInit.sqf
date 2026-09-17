@@ -21,7 +21,7 @@ if (!tlb_keys_core_enabled || {tlb_keys_core_startState != 0}) exitWith {};
 [{
     params ["_veh"];
 
-    if (!alive _veh || {unitIsUAV _veh}) exitWith {};
+    if (!alive _veh || {!([_veh] call tlb_keys_core_fnc_isKeyed)}) exitWith {};
     if ((_veh getVariable ["tlb_keys_mode", MODE_NONE]) != MODE_NONE) exitWith {};
     if (_veh getVariable ["tlb_keys_keepLock", false]) exitWith {};
 

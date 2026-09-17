@@ -36,6 +36,9 @@ params [
 
 if (isNull _veh) exitWith {};
 
+// Vehicle types switched off in the settings get no keys.
+if (_mode != MODE_NONE && {!([_veh] call tlb_keys_core_fnc_isKeyed)}) exitWith {};
+
 _veh setVariable ["tlb_keys_side", _side, true];
 _veh setVariable ["tlb_keys_group", _group, true];
 _veh setVariable ["tlb_keys_owner", _owner, true];

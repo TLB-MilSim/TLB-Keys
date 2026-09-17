@@ -10,6 +10,7 @@ For developers and anyone curious. File references are relative to `addons/`.
 - [Deciding access](#deciding-access)
 - [Locality](#locality)
 - [ACE menus](#ace-menus)
+- [Vehicle types and key bindings](#vehicle-types-and-key-bindings)
 - [Replacing ACE's vehicle lock](#replacing-aces-vehicle-lock)
 - [Lockpicking with TLB Interactions](#lockpicking-with-tlb-interactions)
 - [Modules and attributes](#modules-and-attributes)
@@ -125,6 +126,33 @@ Each action builds its children with an insert-children function when the menu
 opens (`fn_menuVehicle`, `fn_menuManage`, `fn_menuPick`, `fn_menuKeys`,
 `fn_menuKey`, `fn_menuGive`). The menu therefore only lists what is possible at
 that moment, and statements re-check access before acting.
+
+## Vehicle types and key bindings
+
+`fn_isKeyed` decides from the *Vehicle types* settings whether a vehicle uses
+keys. It is checked by:
+
+- the ACE actions' conditions
+- claiming and `fn_assign`
+- the ignition and inventory locks
+- the start state
+- the conditions that hide ACE's own lock actions
+
+A type that is switched off is therefore left entirely to vanilla and ACE.
+
+Key bindings are CBA keybinds registered in `fn_postInit`, all unbound by
+default. They call `fn_keybind`, which works like this:
+
+- It passes the keys to use (all of them, or only the one in the pressed slot)
+  to `fn_getAccess` as its optional third argument, and picks the nearest
+  vehicle they open.
+- Distance is measured from roughly the vehicle's side: centre distance minus
+  half its bounding radius.
+- That distance is checked against *Key reach*, or against the key fob range
+  when a programmed fob fits.
+
+Slots are `[class, code]` pairs in `tlb_keys_core_slots`. `fn_bindKey` saves
+them in `profileNamespace`, per mission and map.
 
 ## Replacing ACE's vehicle lock
 

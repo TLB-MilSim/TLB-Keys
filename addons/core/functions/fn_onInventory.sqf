@@ -27,6 +27,7 @@ if (_index == -1) exitWith {};
 
 private _veh = [_container, _second] select _index;
 
+if !([_veh] call tlb_keys_core_fnc_isKeyed) exitWith {};
 if (objectParent _unit == _veh) exitWith {};
 if !((locked _veh) in [2, 3]) exitWith {};
 if (([_unit, _veh] call tlb_keys_core_fnc_getAccess) > ACCESS_NONE) exitWith {};

@@ -86,23 +86,28 @@ class CfgFunctions {
             class onDisconnect {};
             class stripArsenal {};
             class chirp {};
+
+            // Vehicle types and key bindings
+            class isKeyed {};
+            class keybind {};
+            class bindKey {};
         };
     };
 };
 
 // --- ACE's own vehicle lock actions ------------------------------------------
-// Hidden while "Replace ACE vehicle locking" is on. The condition reads the
-// setting at the moment the menu opens, so the setting can change without a
-// restart and ACE's actions come back the moment it is turned off.
+// Hidden while "Replace ACE vehicle locking" is on, on vehicle types that use
+// keys. The condition reads the settings at the moment the menu opens, so ACE's
+// actions come back the moment either is turned off.
 #define TLB_KEYS_ACE_ACTIONS \
     class ACE_unlockVehicle { \
-        condition = "!(missionNamespace getVariable ['tlb_keys_core_replaceAce', true]) && {([_player, _target] call ace_vehiclelock_fnc_hasKeyForVehicle) && {(locked _target) in [2, 3]}}"; \
+        condition = "!((missionNamespace getVariable ['tlb_keys_core_replaceAce', true]) && {[_target] call tlb_keys_core_fnc_isKeyed}) && {([_player, _target] call ace_vehiclelock_fnc_hasKeyForVehicle) && {(locked _target) in [2, 3]}}"; \
     }; \
     class ACE_lockVehicle { \
-        condition = "!(missionNamespace getVariable ['tlb_keys_core_replaceAce', true]) && {([_player, _target] call ace_vehiclelock_fnc_hasKeyForVehicle) && {(locked _target) in [0, 1]}}"; \
+        condition = "!((missionNamespace getVariable ['tlb_keys_core_replaceAce', true]) && {[_target] call tlb_keys_core_fnc_isKeyed}) && {([_player, _target] call ace_vehiclelock_fnc_hasKeyForVehicle) && {(locked _target) in [0, 1]}}"; \
     }; \
     class ACE_lockpickVehicle { \
-        condition = "!(missionNamespace getVariable ['tlb_keys_core_replaceAce', true]) && {[_player, _target, 'canLockpick'] call ace_vehiclelock_fnc_lockpick}"; \
+        condition = "!((missionNamespace getVariable ['tlb_keys_core_replaceAce', true]) && {[_target] call tlb_keys_core_fnc_isKeyed}) && {[_player, _target, 'canLockpick'] call ace_vehiclelock_fnc_lockpick}"; \
     };
 
 #define TLB_KEYS_ACE_CLASS \

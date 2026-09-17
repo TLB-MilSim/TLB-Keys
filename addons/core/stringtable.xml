@@ -239,6 +239,60 @@
             <Key ID="STR_tlb_keys_core_set_hotwire_desc">
                 <English>A picked vehicle is hotwired: the ignition lock lets it start until someone with a key locks it again.</English>
             </Key>
+            <Key ID="STR_tlb_keys_core_settings_vehicles">
+                <English>Vehicle types</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_settings_keybinds">
+                <English>Key bindings</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehCars">
+                <English>Keys for cars, trucks and MRAPs</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehCars_desc">
+                <English>Off: these vehicles have no keys. No TLB Keys menu, no ignition or inventory lock, modules and attributes skip them, and ACE's own lock actions stay on them.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehApcs">
+                <English>Keys for wheeled APCs</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehApcs_desc">
+                <English>Off: these vehicles have no keys. No TLB Keys menu, no ignition or inventory lock, modules and attributes skip them, and ACE's own lock actions stay on them.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehTanks">
+                <English>Keys for tanks and tracked vehicles</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehTanks_desc">
+                <English>Off: these vehicles have no keys. No TLB Keys menu, no ignition or inventory lock, modules and attributes skip them, and ACE's own lock actions stay on them.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehHelicopters">
+                <English>Keys for helicopters</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehHelicopters_desc">
+                <English>Off: these vehicles have no keys. No TLB Keys menu, no ignition or inventory lock, modules and attributes skip them, and ACE's own lock actions stay on them.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehPlanes">
+                <English>Keys for planes</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehPlanes_desc">
+                <English>Off: these vehicles have no keys. No TLB Keys menu, no ignition or inventory lock, modules and attributes skip them, and ACE's own lock actions stay on them.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehBoats">
+                <English>Keys for boats</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_vehBoats_desc">
+                <English>Off: these vehicles have no keys. No TLB Keys menu, no ignition or inventory lock, modules and attributes skip them, and ACE's own lock actions stay on them.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowKeybinds">
+                <English>Allow key bindings</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowKeybinds_desc">
+                <English>Players can lock and unlock vehicles with key bindings instead of the ACE menu: the nearest vehicle their keys open, or with the key in one of three key slots. Players bind them under Controls, Configure Addons, TLB Keys.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_keyRange">
+                <English>Key reach (m)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_keyRange_desc">
+                <English>How far from the side of a vehicle a key works with the key bindings. A key fob programmed to the vehicle reaches the key fob range instead.</English>
+            </Key>
         </Container>
 
         <Container name="Names">
@@ -274,6 +328,9 @@
             </Key>
             <Key ID="STR_tlb_keys_core_key_cutLabel">
                 <English>%1 #%2 - %3</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_key_inSlot">
+                <English>%1 [slot %2]</English>
             </Key>
         </Container>
 
@@ -376,6 +433,30 @@
             </Key>
             <Key ID="STR_tlb_keys_core_rename_vehicle">
                 <English>Name this vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_slots">
+                <English>Key slot</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_slotEmpty">
+                <English>Slot %1 (empty)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_slotUsed">
+                <English>Slot %1 (%2)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_unbind">
+                <English>Remove from slot %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_kb_nearest">
+                <English>Lock/unlock nearest vehicle</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_kb_nearest_desc">
+                <English>In a seat: the vehicle you are in. Outside: the nearest vehicle any of your keys open, within key reach, or key fob range with a fob.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_kb_slot">
+                <English>Lock/unlock with key slot %1</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_kb_slot_desc">
+                <English>The nearest vehicle the key in this slot opens. Put a key in a slot from Vehicle Keys on yourself, then the key, then Key slot.</English>
             </Key>
         </Container>
 
@@ -535,6 +616,27 @@
             </Key>
             <Key ID="STR_tlb_keys_core_msg_picked">
                 <English>%1: lock picked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_bound">
+                <English>%1 is in key slot %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_unbound">
+                <English>Key slot %1 is empty.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_slotEmpty">
+                <English>Key slot %1 is empty. Put a key in it from Vehicle Keys on yourself.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_slotMissing">
+                <English>You are not carrying the key in slot %1: %2.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_noKeys">
+                <English>You have no vehicle keys.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_noFit">
+                <English>None of your keys fit this vehicle.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_nothingInReach">
+                <English>No vehicle your keys open is in reach.</English>
             </Key>
         </Container>
     </Package>

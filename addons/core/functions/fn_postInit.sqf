@@ -45,7 +45,7 @@ private _outside = [
     "tlb_keys_vehicle", localize "STR_tlb_keys_core_action_vehicle", ICON_KEY, {},
     {
         params ["_target"];
-        tlb_keys_core_enabled && {alive _target} && {!unitIsUAV _target}
+        tlb_keys_core_enabled && {alive _target} && {[_target] call tlb_keys_core_fnc_isKeyed}
     },
     {
         params ["_target", "_player"];
@@ -58,7 +58,7 @@ private _inside = [
     "tlb_keys_vehicle", localize "STR_tlb_keys_core_action_vehicle", ICON_KEY, {},
     {
         params ["_target", "_player"];
-        tlb_keys_core_enabled && {alive _target} && {_player in crew _target}
+        tlb_keys_core_enabled && {alive _target} && {_player in crew _target} && {[_target] call tlb_keys_core_fnc_isKeyed}
     },
     {
         params ["_target", "_player"];
@@ -104,3 +104,30 @@ private _give = [
 ] call ace_interact_menu_fnc_createAction;
 
 ["CAManBase", 0, ["ACE_MainActions"], _give, true] call ace_interact_menu_fnc_addActionToClass;
+
+// --- Key bindings ---------------------------------------------------------------
+// Options -> Controls -> Configure Addons -> TLB Keys. Unbound until the player
+// binds them. The three slots are filled from each key's ACE menu (fn_bindKey)
+// and remembered in the profile per mission and map.
+tlb_keys_core_slotsVar = format ["tlb_keys_slots_%1_%2", missionName, worldName];
+tlb_keys_core_slots = +(profileNamespace getVariable [tlb_keys_core_slotsVar, [[], [], []]]);
+
+private _category = localize "STR_tlb_keys_settings_category";
+
+[
+    _category, "tlb_keys_nearest",
+    [localize "STR_tlb_keys_core_kb_nearest", localize "STR_tlb_keys_core_kb_nearest_desc"],
+    { [0] call tlb_keys_core_fnc_keybind },
+    {},
+    [-1, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
+for "_slot" from 1 to 3 do {
+    [
+        _category, format ["tlb_keys_slot%1", _slot],
+        [format [localize "STR_tlb_keys_core_kb_slot", _slot], localize "STR_tlb_keys_core_kb_slot_desc"],
+        compile format ["[%1] call tlb_keys_core_fnc_keybind", _slot],
+        {},
+        [-1, [false, false, false]]
+    ] call CBA_fnc_addKeybind;
+};

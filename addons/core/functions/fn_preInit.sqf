@@ -52,6 +52,18 @@ tlb_keys_core_lockpickEnabled = true;
 tlb_keys_core_useTlbi = true;
 tlb_keys_core_lockpickTime = 20;
 tlb_keys_core_hotwire = true;
+tlb_keys_core_vehCars = true;
+tlb_keys_core_vehApcs = true;
+tlb_keys_core_vehTanks = true;
+tlb_keys_core_vehHelicopters = true;
+tlb_keys_core_vehPlanes = true;
+tlb_keys_core_vehBoats = true;
+tlb_keys_core_allowKeybinds = true;
+tlb_keys_core_keyRange = 5;
+
+// Key slots for the key bindings, filled in post-init from the profile.
+tlb_keys_core_slots = [[], [], []];
+tlb_keys_core_slotsVar = "";
 
 private _fnc_add = {
     params ["_name", "_type", "_sub", "_value"];
@@ -103,6 +115,19 @@ private _fnc_add = {
 ["useTlbi", "CHECKBOX", "pick", true] call _fnc_add;
 ["lockpickTime", "SLIDER", "pick", [1, 120, 20, 0]] call _fnc_add;
 ["hotwire", "CHECKBOX", "pick", true] call _fnc_add;
+
+// --- Vehicle types ----------------------------------------------------------
+// Which kinds of vehicle use keys at all (fn_isKeyed).
+["vehCars", "CHECKBOX", "vehicles", true] call _fnc_add;
+["vehApcs", "CHECKBOX", "vehicles", true] call _fnc_add;
+["vehTanks", "CHECKBOX", "vehicles", true] call _fnc_add;
+["vehHelicopters", "CHECKBOX", "vehicles", true] call _fnc_add;
+["vehPlanes", "CHECKBOX", "vehicles", true] call _fnc_add;
+["vehBoats", "CHECKBOX", "vehicles", true] call _fnc_add;
+
+// --- Key bindings -----------------------------------------------------------
+["allowKeybinds", "CHECKBOX", "keybinds", true] call _fnc_add;
+["keyRange", "SLIDER", "keybinds", [2, 15, 5, 1]] call _fnc_add;
 
 // --- ACE's vehicle lock -----------------------------------------------------
 // Registered here, before ACE's post-init handler, so ACE sees these values when
