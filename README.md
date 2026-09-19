@@ -51,7 +51,7 @@ Everything else is built around those three:
 | **Inside handle** | Anyone in a seat can lock and unlock, like a real car door. |
 | **Hand over key** | An ACE action on another player: no swapping inventories. |
 | **Inspect and label** | See what a key opens, and name it, so a crate of motor pool keys stays readable. |
-| **Lockpicking** | With [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions), vehicles are picked on its board; without it, ACE's lockpick. A picked vehicle is hotwired until someone locks it again. |
+| **Lockpicking** | A lock pick kit in the Arsenal opens vehicles your keys do not fit: on [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions)' board when that mod is loaded, otherwise with a progress bar. A picked vehicle is hotwired until someone locks it again. |
 | **Vehicle types** | Choose which kinds of vehicle use keys at all: cars, APCs, tanks, helicopters, planes, boats. |
 
 **For mission makers:** sync vehicles, crates and units to a **Key Set** module

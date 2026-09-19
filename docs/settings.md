@@ -80,9 +80,9 @@ on to force it. Leave several on and the first player to lock a vehicle chooses.
 
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
-| Vehicle lockpicking | `tlb_keys_core_lockpickEnabled` | on | on / off | Locked vehicles can be picked. Never for vehicles marked as not pickable, or with `ace_vehiclelock_lockpickStrength` -1. |
-| Use TLB Interactions | `tlb_keys_core_useTlbi` | on | on / off | With TLB Interactions loaded, picking uses its board with a lock pick kit or a paperclip. Off, or without it, ACE's lockpick is used. The board's difficulty comes from TLB Interactions' settings for civilian doors. |
-| ACE lockpick time (s) | `tlb_keys_core_lockpickTime` | 20 | 1 to 120 | How long ACE's lockpick takes, unless the vehicle sets `ace_vehiclelock_lockpickStrength`. |
+| Vehicle lockpicking | `tlb_keys_core_lockpickEnabled` | on | on / off | Locked vehicles can be picked with a lock pick kit (TLB Keys', TLB Interactions' kit or paperclip, or ACE's lockpick). Never for vehicles marked as not pickable, or with `ace_vehiclelock_lockpickStrength` -1. |
+| Use TLB Interactions | `tlb_keys_core_useTlbi` | on | on / off | With TLB Interactions loaded, picking uses its board with a lock pick kit or a paperclip. Off, or without it, a progress bar. The board's difficulty comes from TLB Interactions' settings for civilian doors. |
+| Lockpick time (s) | `tlb_keys_core_lockpickTime` | 20 | 1 to 120 | How long the progress bar takes without TLB Interactions, unless the vehicle sets `ace_vehiclelock_lockpickStrength`. |
 | Picked vehicles can be driven | `tlb_keys_core_hotwire` | on | on / off | A picked vehicle is hotwired: the ignition lock lets it start until someone with a key locks it again. |
 
 ## Vehicle types

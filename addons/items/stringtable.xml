@@ -39,5 +39,13 @@
                 <English>Blank until programmed at a vehicle. Opens the vehicles it is paired to, and locks or unlocks them from a distance with a chirp.</English>
             </Key>
         </Container>
+        <Container name="Tools">
+            <Key ID="STR_tlb_keys_items_lockpick">
+                <English>Lock Pick Kit</English>
+            </Key>
+            <Key ID="STR_tlb_keys_items_lockpick_desc">
+                <English>Tension wrench, hook pick and rake. Picks the lock of a vehicle your keys do not fit. With TLB Interactions loaded, use its own lock pick kit or paperclip instead.</English>
+            </Key>
+        </Container>
     </Package>
 </Project>

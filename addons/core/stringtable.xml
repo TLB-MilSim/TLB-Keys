@@ -365,14 +365,8 @@
             <Key ID="STR_tlb_keys_core_action_pick">
                 <English>Pick lock</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_action_pickKit">
-                <English>With lock pick kit</English>
-            </Key>
-            <Key ID="STR_tlb_keys_core_action_pickClip">
-                <English>With paperclip</English>
-            </Key>
-            <Key ID="STR_tlb_keys_core_action_pickAce">
-                <English>With lockpick</English>
+            <Key ID="STR_tlb_keys_core_action_pickWith">
+                <English>With %1</English>
             </Key>
             <Key ID="STR_tlb_keys_core_action_check">
                 <English>Check lock</English>

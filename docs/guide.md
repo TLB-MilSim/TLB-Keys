@@ -196,13 +196,20 @@ they only come from modules, Zeus or a crate.
 ## Lockpicking and hotwiring
 
 No key? Locks can be picked, if the server allows it and the vehicle is
-pickable. At a locked vehicle, *Vehicle Keys → Pick lock* appears when you carry
-a tool:
+pickable. You need a picking tool:
 
-- **With [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions):**
-  *With lock pick kit* or *With paperclip* opens its lockpicking board. Stay by
-  the vehicle while you pick.
-- **Without it:** *With lockpick* uses ACE's lockpick and a progress bar.
+| Tool | Where it comes from |
+| --- | --- |
+| **Lock Pick Kit** | TLB Keys, in the Arsenal. Hidden when TLB Interactions is loaded, because its own kit is used instead. |
+| **Lock pick kit** or **Paperclip** | [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions), when it is loaded. |
+| **Lockpick** | ACE, if your mission hands them out. |
+
+At a locked vehicle, *Vehicle Keys → Pick lock* lists the tools you carry:
+
+- **With [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions)
+  loaded:** its lockpicking board opens, where picking a lock is something you
+  actually do. Stay by the vehicle while you work.
+- **Without it:** a progress bar, the way ACE's own lockpicking works.
 
 A picked vehicle is **hotwired**: the ignition lock lets it start without a key,
 until someone with a key locks it again. The cargo is open while it is unlocked,
