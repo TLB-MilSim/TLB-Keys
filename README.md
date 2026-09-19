@@ -20,6 +20,10 @@
 </p>
 
 <p align="center">
+  <a href="https://youtu.be/d6jac-rj0Bs"><img src="docs/images/demo-video.jpg" alt="TLB Keys demo video"></a>
+</p>
+
+<p align="center">
   <img src="docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob">
 </p>
 
