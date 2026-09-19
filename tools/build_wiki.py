@@ -46,7 +46,7 @@ SHOTS = {
     "## The keys": ("keys-in-the-arsenal.png", "The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side", 360),
     "## Locking a vehicle for the first time": ("lock-a-vehicle.jpg", "Lock for BLUFOR, Lock for my squad, Lock to my key and Check lock"),
     "## Managing a vehicle": ("manage-keys.jpg", "Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle"),
-    "## Your own keys": ("my-keys-menu.jpg", "The player's own Vehicle Keys menu listing a master key, a cut vehicle key and a key fob"),
+    "## Your own keys": ("my-keys-menu.jpg", "The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key"),
     "## Key fobs": ("program-a-fob.jpg", "Manage keys, Cut keys, Program Key Fob (blank)"),
     "## Key bindings and key slots": ("key-bindings.png", "Controls, Configure Addons, TLB Keys: lock/unlock nearest vehicle and three key slots"),
     "## Lockpicking and hotwiring": ("pick-lock.jpg", "Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle"),
