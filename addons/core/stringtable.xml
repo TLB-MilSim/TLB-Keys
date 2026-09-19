@@ -221,17 +221,20 @@
             <Key ID="STR_tlb_keys_core_set_lockpickEnabled_desc">
                 <English>Locked vehicles can be picked. A vehicle whose Eden attribute says it cannot be picked, or whose ace_vehiclelock_lockpickStrength is -1, never can.</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_set_useTsp">
-                <English>Use TSP Breach's lock pick kits</English>
+            <Key ID="STR_tlb_keys_core_set_pickKit">
+                <English>Lock pick kit</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_set_useTsp_desc">
-                <English>TSP Breach's lock pick kit and paperclip pick vehicle locks when that mod is loaded. Off: they do not, and players need another kit.</English>
+            <Key ID="STR_tlb_keys_core_set_pickKit_desc">
+                <English>Which kit picks vehicle locks. Automatic uses TSP Breach's kit when that mod is loaded, and TLB Keys' own kit otherwise. The kit that is not in use is hidden from the ACE Arsenal, so players never see two. With TLB Interactions loaded, its board owns picking and its own settings choose the tool, so this does nothing. ACE's lockpick always works.</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_set_useTlbiItems">
-                <English>Use TLB Interactions' lock pick kits</English>
+            <Key ID="STR_tlb_keys_core_pickKit_0">
+                <English>Automatic</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_set_useTlbiItems_desc">
-                <English>TLB Interactions' lock pick kit and paperclip pick vehicle locks when that mod is loaded. Off: they do not, and players need another kit. Whether its lockpicking board handles vehicles at all is TLB Interactions' own setting.</English>
+            <Key ID="STR_tlb_keys_core_pickKit_1">
+                <English>TSP Breach's kit</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_pickKit_2">
+                <English>TLB Keys' kit</English>
             </Key>
             <Key ID="STR_tlb_keys_core_set_lockpickTime">
                 <English>Lockpick time (s)</English>

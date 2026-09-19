@@ -49,8 +49,7 @@ tlb_keys_core_allowFobs = true;
 tlb_keys_core_fobRange = 15;
 tlb_keys_core_fobSound = true;
 tlb_keys_core_lockpickEnabled = true;
-tlb_keys_core_useTsp = true;
-tlb_keys_core_useTlbiItems = true;
+tlb_keys_core_pickKit = 0;
 tlb_keys_core_lockpickTime = 20;
 tlb_keys_core_hotwire = true;
 tlb_keys_core_allowHotwire = true;
@@ -115,8 +114,7 @@ private _fnc_add = {
 
 // --- Lockpicking ------------------------------------------------------------
 ["lockpickEnabled", "CHECKBOX", "pick", true] call _fnc_add;
-["useTsp", "CHECKBOX", "pick", true] call _fnc_add;
-["useTlbiItems", "CHECKBOX", "pick", true] call _fnc_add;
+["pickKit", "LIST", "pick", [[0, 1, 2], ["$STR_tlb_keys_core_pickKit_0", "$STR_tlb_keys_core_pickKit_1", "$STR_tlb_keys_core_pickKit_2"], 0]] call _fnc_add;
 ["lockpickTime", "SLIDER", "pick", [1, 120, 20, 0]] call _fnc_add;
 ["hotwire", "CHECKBOX", "pick", true] call _fnc_add;
 ["allowHotwire", "CHECKBOX", "pick", true] call _fnc_add;

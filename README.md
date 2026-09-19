@@ -134,11 +134,11 @@ troubleshooting page.
   ACE's own lock actions back on them.
 - **[TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions) and
   [TSP Breach](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995):**
-  both are detected automatically, and their lock pick kits and paperclips pick
-  vehicle locks, so nobody needs a second kit. TLB Keys' own kit is hidden from
-  the Arsenal while either mod is loaded, and each one can be turned off in the
-  settings. With TLB Interactions, picking happens on its board; whether it
-  handles vehicles at all is its own *Pick vehicle locks* setting.
+  both are detected automatically and their lock pick kits pick vehicle locks,
+  so nobody needs a second kit. With TLB Interactions loaded, picking happens on
+  its board and its own settings choose the tool and whether it handles vehicles
+  at all. Without it, one *Lock pick kit* setting picks between TSP Breach's kit
+  and TLB Keys' own, and hides the other from the Arsenal.
 
 ## Licence
 
