@@ -43,14 +43,14 @@ LINKS = {
 
 # Screenshots dropped in under a heading of the player guide.
 SHOTS = {
-    "## Locking a vehicle for the first time": ("lock-a-vehicle.jpg", "Lock for BLUFOR, Lock for my squad, Lock to my key and Check lock"),
-    "## Managing a vehicle": ("manage-keys.jpg", "Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle"),
-    "## Your own keys": ("my-keys-menu.jpg", "The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key"),
-    "## Key fobs": ("program-a-fob.jpg", "Manage keys, Cut keys, Program Key Fob (blank)"),
-    "## Key bindings and key slots": ("key-bindings.png", "Controls, Configure Addons, TLB Keys: lock/unlock nearest vehicle and three key slots"),
-    "## Lockpicking and hotwiring": ("pick-lock.jpg", "Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle"),
-    "### Hotwiring from the driver's seat": ("hotwire.jpg", "Vehicle Keys, Hotwire from the driver's seat"),
-    "## Handing keys to other players": ("hand-over-key.jpg", "Hand over key on another player, listing the keys carried"),
+    "## Locking a vehicle for the first time": ("lock-vehicle-menu.png", "Lock for BLUFOR, Lock for my squad, Lock to my key and Check lock"),
+    "## Managing a vehicle": ("manage-keys-menu.png", "Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle"),
+    "## Your own keys": ("own-keys-menu.png", "The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key"),
+    "## Key fobs": ("program-fob-menu.png", "Manage keys, Cut keys, Program Key Fob (blank)"),
+    "## Key bindings and key slots": ("key-bindings-screen.png", "Controls, Configure Addons, TLB Keys: lock/unlock nearest vehicle and three key slots"),
+    "## Lockpicking and hotwiring": ("lockpick-menu.png", "Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle"),
+    "### Hotwiring from the driver's seat": ("hotwire-menu.png", "Vehicle Keys, Hotwire from the driver's seat"),
+    "## Handing keys to other players": ("handover-menu.png", "Hand over key on another player, listing the keys carried"),
 }
 
 

@@ -55,7 +55,7 @@ those keys around or using them faster.
 | **Key Fob**, blank | Nothing, until it is programmed at a vehicle. |
 | **Key Fob**, programmed | The vehicles it was programmed to, up close or from a distance. |
 
-<img src="images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
+<img src="images/arsenal-keys.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
 
 A few things worth knowing:
 
@@ -117,7 +117,7 @@ keys fit.
 
 *Name vehicle* opens a text box, and the name follows every key cut for it:
 
-<img src="images/name-vehicle.jpg" alt="Name this vehicle: M1165A1 GMV (SAG-2/Mk19/M240)">
+<img src="images/name-vehicle-dialog.png" alt="Name this vehicle: M1165A1 GMV (SAG-2/Mk19/M240)">
 
 ## Your own keys
 
@@ -233,7 +233,7 @@ no lock left to pick, and the engine still will not start. Sit in the driver's
 seat and use *Vehicle Keys → Hotwire* (ACE self-interaction). After about
 25 seconds it starts without a key, until someone with a key locks it again.
 
-<img src="images/hotwire-progress.png" alt="Hotwiring... Time left: 23s">
+<img src="images/hotwire-bar.png" alt="Hotwiring... Time left: 23s">
 
 That is how you drive off in a vehicle you found open, or one a team mate
 unlocked for you and then left.

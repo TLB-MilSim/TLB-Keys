@@ -44,7 +44,7 @@ A vehicle nobody has locked is open. The first player to lock one becomes its
 | **Paired keys only** | Only keys cut to that vehicle. The owner's key is cut as it is locked. |
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle, offering Lock for BLUFOR, Lock for my squad and Lock to my key">
+  <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/lock-vehicle-menu.png" alt="The Vehicle Keys menu on an unlocked vehicle, offering Lock for BLUFOR, Lock for my squad and Lock to my key">
 </p>
 
 Your server decides which of the three are allowed, so a unit can run one way of

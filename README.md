@@ -22,23 +22,23 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key">
+  <img src="docs/images/lock-vehicle-menu.png" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key">
 </p>
 
 <p align="center">
-  <img src="docs/images/manage-keys.jpg" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle">
+  <img src="docs/images/manage-keys-menu.png" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle">
 </p>
 
 <p align="center">
-  <img src="docs/images/my-keys-menu.jpg" alt="The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key">
+  <img src="docs/images/own-keys-menu.png" alt="The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key">
 </p>
 
 <p align="center">
-  <img src="docs/images/pick-lock.jpg" alt="Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle">
+  <img src="docs/images/lockpick-menu.png" alt="Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle">
 </p>
 
 <p align="center">
-  <img src="docs/images/hotwire.jpg" alt="Vehicle Keys, Hotwire from the driver's seat">
+  <img src="docs/images/hotwire-menu.png" alt="Vehicle Keys, Hotwire from the driver's seat">
 </p>
 
 ---
@@ -126,7 +126,7 @@ into your mods folder.
 1. **Get a key.** Take a *Vehicle Key* for your side from the Arsenal, or from a
    crate the mission maker filled.
 
-   <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
+   <img src="docs/images/arsenal-keys.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
 
 2. **Lock a vehicle.** ACE interaction on the vehicle → *Vehicle Keys* → *Lock
    for BLUFOR*, *Lock for my squad* or *Lock to my key*. You are now its owner.
