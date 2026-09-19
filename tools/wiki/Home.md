@@ -19,6 +19,10 @@ players manage in the field, from the ACE interaction menu or a key binding.
   <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob">
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
+</p>
+
 ## Where to start
 
 | Page | For |
