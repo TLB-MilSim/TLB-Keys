@@ -87,6 +87,19 @@ if (!_inside && {_locked} && {_access == ACCESS_NONE} && {([_veh, _unit] call tl
     }] call _fnc_action;
 };
 
+if (_inside
+    && {tlb_keys_core_allowHotwire}
+    && {_mode != MODE_NONE}
+    && {_access == ACCESS_NONE}
+    && {!(_veh getVariable ["tlb_keys_hotwired", false])}
+    && {driver _veh == _unit}
+) then {
+    ["hotwire", localize "STR_tlb_keys_core_action_hotwire", ICON_PICK, {
+        params ["_veh", "_unit"];
+        [_unit, _veh] call tlb_keys_core_fnc_hotwire;
+    }] call _fnc_action;
+};
+
 ["check", localize "STR_tlb_keys_core_action_check", ICON_KEY, {
     params ["_veh", "_unit"];
     hint parseText ([_veh, _unit] call tlb_keys_core_fnc_describeVehicle);

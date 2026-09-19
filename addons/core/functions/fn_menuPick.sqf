@@ -3,18 +3,18 @@
  * Author: TLB
  * The ways the player can pick a locked vehicle's lock.
  *
- * Whichever picking tools the loaded mods provide are used, so there is never
- * a second kit doing the same job:
+ * Every picking tool the loaded mods provide is offered, so picking works
+ * whatever the mod set, and nobody needs a second kit for the same job:
  *
- *   TLB Interactions loaded   its lockpicking board, with the tools it knows -
- *                             TSP Breach's kit and paperclip when that is
- *                             loaded too, otherwise its own - and ours as a
- *                             kit for anyone still carrying one
- *   TSP Breach only           its kit or paperclip, on a progress bar
- *   neither                   our own Lock Pick Kit, on a progress bar
+ *   TSP Breach's kit and paperclip      "Use TSP Breach's lock pick kits"
+ *   TLB Interactions' kit and paperclip "Use TLB Interactions' lock pick kits"
+ *   our own Lock Pick Kit               always; hidden from the Arsenal while
+ *                                       either of those mods is loaded
+ *   ACE's lockpick                      always
  *
- * ACE's lockpick counts everywhere. The items addon hides our kit from the
- * Arsenal whenever TLB Interactions or TSP Breach is loaded.
+ * With TLB Interactions loaded, the tools open its lockpicking board; without
+ * it, a progress bar. Whether its board handles vehicles at all is TLB
+ * Interactions' own setting (tlbi_lockpick_vehicles).
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -29,6 +29,11 @@ params ["_veh", "_unit"];
 if (!tlb_keys_core_lockpickEnabled || {!(_veh getVariable ["tlb_keys_pickable", true])}) exitWith { [] };
 if ((_veh getVariable ["ace_vehiclelock_lockpickStrength", tlb_keys_core_lockpickTime]) < 0) exitWith { [] };
 
+private _board = !isNil "tlbi_lockpick_fnc_start"
+    && {missionNamespace getVariable ["tlbi_lockpick_enabled", true]}
+    && {missionNamespace getVariable ["tlbi_lockpick_vehicles", true]};
+
+private _items = _unit call ace_common_fnc_uniqueItems;
 private _actions = [];
 
 private _statement = {
@@ -37,44 +42,32 @@ private _statement = {
     [_unit, _veh, _method, _item] call tlb_keys_core_fnc_pick;
 };
 
-private _fnc_add = {
-    params ["_name", "_method", "_item"];
-    _actions pushBack [
-        [
-            _name,
-            format [localize "STR_tlb_keys_core_action_pickWith", getText (configFile >> "CfgWeapons" >> _item >> "displayName")],
-            ICON_PICK, _statement, {true}, {}, [_method, _item]
-        ] call ace_interact_menu_fnc_createAction,
-        [],
-        _veh
-    ];
-};
+// [class, TLB Interactions tool (0 kit, 1 paperclip), allowed by settings]
+{
+    _x params ["_class", "_tool", "_allowed"];
 
-private _items = _unit call ace_common_fnc_uniqueItems;
+    if (_allowed && {_class in _items}) then {
+        // On the board the tool decides how it is picked; otherwise it is a
+        // progress bar either way.
+        private _method = [2, _tool] select _board;
 
-private _board = tlb_keys_core_useTlbi
-    && {!isNil "tlbi_lockpick_fnc_start"}
-    && {missionNamespace getVariable ["tlbi_lockpick_enabled", true]};
-
-if (_board) then {
-    // TLB Interactions picks the tool: TSP Breach's first when it is loaded.
-    {
-        private _tool = _x;
-        private _item = [_unit, _tool] call tlbi_lockpick_fnc_hasTool;
-        if (_item == "" && {_tool == 0} && {"tlb_keys_lockpick" in _items}) then {
-            _item = "tlb_keys_lockpick";
-        };
-        if (_item != "") then {
-            [format ["pick%1", _tool], _tool, _item] call _fnc_add;
-        };
-    } forEach [0, 1];
-} else {
-    // No board: a progress bar with the best tool the player carries.
-    {
-        if (_x in _items) then {
-            [format ["pick%1", _forEachIndex], 2, _x] call _fnc_add;
-        };
-    } forEach ["tsp_lockpick", "tsp_paperclip", "tlbi_lockpickKit", "tlbi_paperclip", "tlb_keys_lockpick", "ACE_key_lockpick"];
-};
+        _actions pushBack [
+            [
+                format ["pick%1", count _actions],
+                format [localize "STR_tlb_keys_core_action_pickWith", getText (configFile >> "CfgWeapons" >> _class >> "displayName")],
+                ICON_PICK, _statement, {true}, {}, [_method, _class]
+            ] call ace_interact_menu_fnc_createAction,
+            [],
+            _veh
+        ];
+    };
+} forEach [
+    ["tsp_lockpick", 0, tlb_keys_core_useTsp],
+    ["tsp_paperclip", 1, tlb_keys_core_useTsp],
+    ["tlbi_lockpickKit", 0, tlb_keys_core_useTlbiItems],
+    ["tlbi_paperclip", 1, tlb_keys_core_useTlbiItems],
+    ["tlb_keys_lockpick", 0, true],
+    ["ACE_key_lockpick", 0, true]
+];
 
 _actions

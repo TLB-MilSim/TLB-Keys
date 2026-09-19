@@ -81,9 +81,12 @@ on to force it. Leave several on and the first player to lock a vehicle chooses.
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
 | Vehicle lockpicking | `tlb_keys_core_lockpickEnabled` | on | on / off | Locked vehicles can be picked with a lock pick kit (TLB Keys', TLB Interactions' kit or paperclip, or ACE's lockpick). Never for vehicles marked as not pickable, or with `ace_vehiclelock_lockpickStrength` -1. |
-| Use TLB Interactions | `tlb_keys_core_useTlbi` | on | on / off | With TLB Interactions loaded, picking uses its board with a lock pick kit or a paperclip. Off, or without it, a progress bar. The board's difficulty comes from TLB Interactions' settings for civilian doors. |
+| Use TSP Breach's lock pick kits | `tlb_keys_core_useTsp` | on | on / off | TSP Breach's kit and paperclip pick vehicle locks when that mod is loaded. |
+| Use TLB Interactions' lock pick kits | `tlb_keys_core_useTlbiItems` | on | on / off | TLB Interactions' kit and paperclip pick vehicle locks when that mod is loaded. |
 | Lockpick time (s) | `tlb_keys_core_lockpickTime` | 20 | 1 to 120 | How long the progress bar takes without TLB Interactions, unless the vehicle sets `ace_vehiclelock_lockpickStrength`. |
 | Picked vehicles can be driven | `tlb_keys_core_hotwire` | on | on / off | A picked vehicle is hotwired: the ignition lock lets it start until someone with a key locks it again. |
+| Allow hotwiring | `tlb_keys_core_allowHotwire` | on | on / off | A driver whose keys do not fit can hotwire the vehicle they are sitting in, from the driver's seat. It then starts without a key until someone with a key locks it again. |
+| Hotwire time (s) | `tlb_keys_core_hotwireTime` | 25 | 5 to 300 | How long hotwiring takes. |
 
 ## Vehicle types
 
@@ -108,6 +111,11 @@ Static weapons and UAVs never use keys.
 | --- | --- | --- | --- | --- |
 | Allow key bindings | `tlb_keys_core_allowKeybinds` | on | on / off | Players can lock and unlock with key bindings instead of the ACE menu. Each player binds the keys under *Controls → Configure Addons → TLB Keys*. |
 | Key reach (m) | `tlb_keys_core_keyRange` | 5 | 2 to 15 | How far from the side of a vehicle a key works with the key bindings. A key fob programmed to the vehicle reaches the key fob range instead. |
+
+**Whether TLB Interactions' board handles vehicle locks at all is TLB
+Interactions' own setting** (*Pick vehicle locks*, under its Lockpicking
+settings), not one of these. Without that mod, or with it switched off there,
+picking is a progress bar.
 
 ## Example settings file
 

@@ -222,6 +222,16 @@ A picked vehicle is **hotwired**: the ignition lock lets it start without a key,
 until someone with a key locks it again. The cargo is open while it is unlocked,
 like any unlocked vehicle.
 
+### Hotwiring from the driver's seat
+
+An unlocked vehicle whose keys you do not have is a different problem: there is
+no lock left to pick, and the engine still will not start. Sit in the driver's
+seat and use *Vehicle Keys → Hotwire* (ACE self-interaction). After about
+25 seconds it starts without a key, until someone with a key locks it again.
+
+That is how you drive off in a vehicle you found open, or one a team mate
+unlocked for you and then left.
+
 ## Which vehicles have keys
 
 Your server chooses which kinds of vehicle use keys at all: cars, trucks and

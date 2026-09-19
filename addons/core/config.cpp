@@ -77,6 +77,7 @@ class CfgFunctions {
             // Lockpicking
             class pick {};
             class picked {};
+            class hotwire {};
 
             // Event handlers
             class onEngine {};
