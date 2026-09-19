@@ -18,22 +18,31 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob" width="820">
+  <img src="docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob">
 </p>
 
 <p align="center">
-  <img src="docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key" width="410">
-  <img src="docs/images/manage-keys.jpg" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle" width="410">
+  <img src="docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key">
 </p>
 
 <p align="center">
-  <img src="docs/images/my-keys-menu.jpg" alt="The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key" width="410">
-  <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side" width="300">
+  <img src="docs/images/manage-keys.jpg" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle">
 </p>
 
 <p align="center">
-  <img src="docs/images/pick-lock.jpg" alt="Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle" width="410">
-  <img src="docs/images/hotwire.jpg" alt="Vehicle Keys, Hotwire from the driver's seat" width="410">
+  <img src="docs/images/my-keys-menu.jpg" alt="The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key">
+</p>
+
+<p align="center">
+  <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
+</p>
+
+<p align="center">
+  <img src="docs/images/pick-lock.jpg" alt="Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle">
+</p>
+
+<p align="center">
+  <img src="docs/images/hotwire.jpg" alt="Vehicle Keys, Hotwire from the driver's seat">
 </p>
 
 ---

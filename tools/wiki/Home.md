@@ -16,7 +16,7 @@ hand one out in the middle of a mission. TLB Keys replaces them with keys your
 players manage in the field, from the ACE interaction menu or a key binding.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob" width="820">
+  <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob">
 </p>
 
 ## Where to start
@@ -44,7 +44,7 @@ A vehicle nobody has locked is open. The first player to lock one becomes its
 | **Paired keys only** | Only keys cut to that vehicle. The owner's key is cut as it is locked. |
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle, offering Lock for BLUFOR, Lock for my squad and Lock to my key" width="820">
+  <img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle, offering Lock for BLUFOR, Lock for my squad and Lock to my key">
 </p>
 
 Your server decides which of the three are allowed, so a unit can run one way of
