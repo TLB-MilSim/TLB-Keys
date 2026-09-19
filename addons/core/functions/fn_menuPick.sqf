@@ -3,18 +3,16 @@
  * Author: TLB
  * The ways the player can pick a locked vehicle's lock.
  *
- * Every picking tool the loaded mods provide is offered, so picking works
- * whatever the mod set, and nobody needs a second kit for the same job:
+ * Who owns the choice of tool depends on what is loaded:
  *
- *   TSP Breach's kit and paperclip      "Use TSP Breach's lock pick kits"
- *   TLB Interactions' kit and paperclip "Use TLB Interactions' lock pick kits"
- *   our own Lock Pick Kit               always; hidden from the Arsenal while
- *                                       either of those mods is loaded
- *   ACE's lockpick                      always
+ *   TLB Interactions   its board owns picking, and its own settings choose the
+ *                      tool - its kit and paperclip, or TSP Breach's. Our kit
+ *                      still works for anyone carrying one from before.
+ *   otherwise          the "Lock pick kit" setting: TSP Breach's kit, ours, or
+ *                      Automatic, which is TSP Breach's when that mod is loaded
+ *                      and ours when it is not.
  *
- * With TLB Interactions loaded, the tools open its lockpicking board; without
- * it, a progress bar. Whether its board handles vehicles at all is TLB
- * Interactions' own setting (tlbi_lockpick_vehicles).
+ * ACE's lockpick works in all of them.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -42,32 +40,48 @@ private _statement = {
     [_unit, _veh, _method, _item] call tlb_keys_core_fnc_pick;
 };
 
-// [class, TLB Interactions tool (0 kit, 1 paperclip), allowed by settings]
-{
-    _x params ["_class", "_tool", "_allowed"];
+private _fnc_add = {
+    params ["_method", "_item"];
+    _actions pushBack [
+        [
+            format ["pick%1", count _actions],
+            format [localize "STR_tlb_keys_core_action_pickWith", getText (configFile >> "CfgWeapons" >> _item >> "displayName")],
+            ICON_PICK, _statement, {true}, {}, [_method, _item]
+        ] call ace_interact_menu_fnc_createAction,
+        [],
+        _veh
+    ];
+};
 
-    if (_allowed && {_class in _items}) then {
-        // On the board the tool decides how it is picked; otherwise it is a
-        // progress bar either way.
-        private _method = [2, _tool] select _board;
-
-        _actions pushBack [
-            [
-                format ["pick%1", count _actions],
-                format [localize "STR_tlb_keys_core_action_pickWith", getText (configFile >> "CfgWeapons" >> _class >> "displayName")],
-                ICON_PICK, _statement, {true}, {}, [_method, _class]
-            ] call ace_interact_menu_fnc_createAction,
-            [],
-            _veh
-        ];
+if (_board) then {
+    // TLB Interactions knows its tools, and which of them TSP Breach provides.
+    {
+        private _tool = _x;
+        private _item = [_unit, _tool] call tlbi_lockpick_fnc_hasTool;
+        if (_item == "" && {_tool == 0} && {"tlb_keys_lockpick" in _items}) then {
+            _item = "tlb_keys_lockpick";
+        };
+        if (_item != "") then {
+            [_tool, _item] call _fnc_add;
+        };
+    } forEach [0, 1];
+} else {
+    private _kits = switch (tlb_keys_core_pickKit) do {
+        case 1: { ["tsp_lockpick", "tsp_paperclip"] };
+        case 2: { ["tlb_keys_lockpick"] };
+        // Automatic: whichever mod's kit is actually there.
+        default {
+            if (isClass (configFile >> "CfgWeapons" >> "tsp_lockpick")) then {
+                ["tsp_lockpick", "tsp_paperclip"]
+            } else {
+                ["tlb_keys_lockpick"]
+            }
+        };
     };
-} forEach [
-    ["tsp_lockpick", 0, tlb_keys_core_useTsp],
-    ["tsp_paperclip", 1, tlb_keys_core_useTsp],
-    ["tlbi_lockpickKit", 0, tlb_keys_core_useTlbiItems],
-    ["tlbi_paperclip", 1, tlb_keys_core_useTlbiItems],
-    ["tlb_keys_lockpick", 0, true],
-    ["ACE_key_lockpick", 0, true]
-];
+
+    {
+        if (_x in _items) then { [2, _x] call _fnc_add };
+    } forEach (_kits + ["ACE_key_lockpick"]);
+};
 
 _actions

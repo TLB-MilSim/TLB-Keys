@@ -198,18 +198,16 @@ they only come from modules, Zeus or a crate.
 No key? Locks can be picked, if the server allows it and the vehicle is
 pickable. You need a picking tool:
 
-Which kit that is depends on the mods your server runs, so there is never a
-second kit doing the same job:
+Which kit that is depends on the mods your server runs. There is only ever one
+in the Arsenal, because the other is hidden:
 
-| Mods loaded | The tool you use | Where it comes from |
+| Mods loaded | The tool you carry | Who decides |
 | --- | --- | --- |
-| **TLB Interactions** (with or without TSP Breach) | Lock pick kit or paperclip | TLB Interactions, or TSP Breach's own when that is loaded too |
-| **TSP Breach** only | Lock pick kit or paperclip | TSP Breach |
-| **Neither** | **Lock Pick Kit** | TLB Keys, in the Arsenal |
+| **TLB Interactions** (with or without TSP Breach) | Its lock pick kit or paperclip, or TSP Breach's | TLB Interactions, in its own settings |
+| **TSP Breach** only | TSP Breach's kit and paperclip, or TLB Keys' **Lock Pick Kit** | your server's *Lock pick kit* setting |
+| **Neither** | TLB Keys' **Lock Pick Kit** | - |
 
-TLB Keys' kit is hidden from the Arsenal whenever one of the other mods is
-loaded. ACE's **Lockpick** works in all of them, if your mission hands them
-out.
+ACE's **Lockpick** works in all of them, if your mission hands them out.
 
 At a locked vehicle, *Vehicle Keys → Pick lock* lists the tools you carry:
 
