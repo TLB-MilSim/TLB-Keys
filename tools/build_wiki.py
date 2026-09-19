@@ -43,7 +43,7 @@ LINKS = {
 
 # Screenshots dropped in under a heading of the player guide.
 SHOTS = {
-    "## The keys": ("keys-in-the-arsenal.jpg", "Key Fob, Master Key (BLUFOR) and Vehicle Key (BLUFOR) in a crate"),
+    "## The keys": ("keys-in-the-arsenal.png", "The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side", 360),
     "## Locking a vehicle for the first time": ("lock-a-vehicle.jpg", "Lock for BLUFOR, Lock for my squad, Lock to my key and Check lock"),
     "## Managing a vehicle": ("manage-keys.jpg", "Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle"),
     "## Your own keys": ("my-keys-menu.jpg", "The player's own Vehicle Keys menu listing a master key, a cut vehicle key and a key fob"),
@@ -66,8 +66,11 @@ def convert(text, title):
 
 
 def shots(text):
-    for heading, (image, alt) in SHOTS.items():
-        block = heading + '\n\n<img src="' + RAW + image + '" alt="' + alt + '" width="820">\n'
+    """Screenshots are 820 wide unless the entry gives a width of its own."""
+    for heading, shot in SHOTS.items():
+        image, alt = shot[0], shot[1]
+        width = str(shot[2]) if len(shot) > 2 else "820"
+        block = heading + '\n\n<img src="' + RAW + image + '" alt="' + alt + '" width="' + width + '">\n'
         text = text.replace(heading + "\n", block, 1)
     return text
 

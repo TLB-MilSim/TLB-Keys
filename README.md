@@ -28,7 +28,7 @@
 
 <p align="center">
   <img src="docs/images/my-keys-menu.jpg" alt="The player's own keys: a master key, a cut vehicle key and a key fob" width="410">
-  <img src="docs/images/keys-in-the-arsenal.jpg" alt="Key Fob, Master Key and Vehicle Key in a crate" width="410">
+  <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side" width="300">
 </p>
 
 <p align="center">
