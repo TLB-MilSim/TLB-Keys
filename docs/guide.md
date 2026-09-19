@@ -196,17 +196,41 @@ they only come from modules, Zeus or a crate.
 ## Lockpicking and hotwiring
 
 No key? Locks can be picked, if the server allows it and the vehicle is
-pickable. At a locked vehicle, *Vehicle Keys → Pick lock* appears when you carry
-a tool:
+pickable. You need a picking tool:
 
-- **With [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions):**
-  *With lock pick kit* or *With paperclip* opens its lockpicking board. Stay by
-  the vehicle while you pick.
-- **Without it:** *With lockpick* uses ACE's lockpick and a progress bar.
+Which kit that is depends on the mods your server runs, so there is never a
+second kit doing the same job:
+
+| Mods loaded | The tool you use | Where it comes from |
+| --- | --- | --- |
+| **TLB Interactions** (with or without TSP Breach) | Lock pick kit or paperclip | TLB Interactions, or TSP Breach's own when that is loaded too |
+| **TSP Breach** only | Lock pick kit or paperclip | TSP Breach |
+| **Neither** | **Lock Pick Kit** | TLB Keys, in the Arsenal |
+
+TLB Keys' kit is hidden from the Arsenal whenever one of the other mods is
+loaded. ACE's **Lockpick** works in all of them, if your mission hands them
+out.
+
+At a locked vehicle, *Vehicle Keys → Pick lock* lists the tools you carry:
+
+- **With [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions)
+  loaded:** its lockpicking board opens, where picking a lock is something you
+  actually do. Stay by the vehicle while you work.
+- **Without it:** a progress bar, the way ACE's own lockpicking works.
 
 A picked vehicle is **hotwired**: the ignition lock lets it start without a key,
 until someone with a key locks it again. The cargo is open while it is unlocked,
 like any unlocked vehicle.
+
+### Hotwiring from the driver's seat
+
+An unlocked vehicle whose keys you do not have is a different problem: there is
+no lock left to pick, and the engine still will not start. Sit in the driver's
+seat and use *Vehicle Keys → Hotwire* (ACE self-interaction). After about
+25 seconds it starts without a key, until someone with a key locks it again.
+
+That is how you drive off in a vehicle you found open, or one a team mate
+unlocked for you and then left.
 
 ## Which vehicles have keys
 

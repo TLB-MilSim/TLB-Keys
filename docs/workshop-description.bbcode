@@ -1,59 +1,104 @@
 [h1]TLB Keys[/h1]
-[b]Vehicle keys for Arma 3 with ACE3, set up the way your unit plays. Lock it for your side, your squad, or one key.[/b]
 
-ACE's vehicle keys open every vehicle of a side, and there is no good way to hand one out in the middle of a mission. TLB Keys replaces them with keys your players manage in the field, from the ACE interaction menu or a key binding.
+Vehicle keys that your players manage in the field. Lock a vehicle for [b]your whole side[/b], for [b]your squad[/b], or to [b]one key[/b] in your pocket, all from the ACE interaction menu.
 
-[h1]Locking a vehicle[/h1]
-A vehicle nobody has locked is open. The first player to lock one becomes its owner and chooses who else it opens for:
+[hr][/hr]
+
+[h2]Requirements[/h2]
 [list]
-[*][b]Every key of the side[/b] - anyone carrying a blank key of the vehicle's side.
-[*][b]The owner's squad[/b] - the owner's squad, carrying a blank key of the side.
-[*][b]Paired keys only[/b] - only keys cut to that vehicle. The owner's key is cut as it is locked.
-[/list]
-
-[h1]Features[/h1]
-[list]
-[*][b]Spare keys[/b] - cut a blank key to the vehicle and hand it to someone.
-[*][b]Change locks[/b] - every key cut for the vehicle stops fitting, spares included.
-[*][b]Master keys[/b] - one per side, for Zeus, command and the motor pool. Opens and manages every vehicle of that side, however it is locked.
-[*][b]Key fobs[/b] - program one to a vehicle: it opens the vehicle and locks it from a distance, with a chirp.
-[*][b]Key bindings[/b] - lock or unlock the nearest vehicle your keys open without opening a menu, plus three key slots for chosen keys.
-[*][b]Ignition lock[/b] - no key, no engine, even in the driver's seat.
-[*][b]Locked cargo[/b] - a locked vehicle's inventory stays shut to anyone whose keys do not fit.
-[*][b]Inside handle[/b] - anyone in a seat can lock and unlock, like a real car door.
-[*][b]Hand over key[/b] - an ACE action on another player, so nobody swaps inventories.
-[*][b]Inspect and label[/b] - see what a key opens, and name it, so a crate of motor pool keys stays readable.
-[*][b]Lockpicking[/b] - with TLB Interactions, vehicles are picked on its board; without it, ACE's lockpick. A picked vehicle is hotwired until someone locks it again.
-[*][b]Vehicle types[/b] - choose which kinds of vehicle use keys at all: cars, APCs, tanks, helicopters, planes, boats.
-[/list]
-
-[h1]For mission makers[/h1]
-[list]
-[*][b]Key Set module[/b] - sync vehicles, crates and units and they share one set of keys: the vehicles are locked to it, the crates hold its keys, the units spawn carrying one.
-[*][b]Master Key module[/b] - synced units start with a master key for their side.
-[*][b]Eden attributes[/b] - every vehicle can be given keys, a side, a key set, a start lock state and whether its lock can be picked.
-[*][b]Zeus modules[/b] - lock or unlock a vehicle, remove its keys, drop a key for it, or give a unit a master key.
-[*][b]Scripting[/b] - public functions to assign keys, hand them out and check access.
-[/list]
-
-[h1]For servers[/h1]
-Around 40 CBA settings, all server-forced, so a unit can allow one way of using keys or all of them: which modes are allowed, who may lock a vehicle first, who may manage it, spare keys, master keys, key fobs, lockpicking, key bindings and which vehicle types use keys at all.
-
-[h1]Requirements[/h1]
-[list]
+[*][b]CBA_A3[/b]
+[*][b]ACE3[/b], built and tested against 3.21.2
 [*]Arma 3 v2.14 or newer
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=450814997]CBA_A3[/url] - required
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=463939057]ACE3[/url] - required
-[*]TLB Interactions - optional, for picking vehicle locks on its lockpicking board
+[*][b]TLB Interactions[/b], optional. With it loaded, vehicle locks are picked on its hands-on lockpicking board
 [/list]
 
-Load it on the server and on every client. Server key included for signature verification.
+[h2]Why[/h2]
+ACE's vehicle keys open every vehicle of a side, and there is no good way to hand one out once a mission is running. A key is either in everyone's loadout or in nobody's.
 
-[h1]Documentation[/h1]
-Full guide, mission making, every setting and how it works:
+TLB Keys replaces that with keys as real items. A vehicle nobody has locked is open, and the first player to lock one decides who else gets in.
+
+[h2]The three ways to lock a vehicle[/h2]
+[list]
+[*][b]Every key of the side[/b] - anyone carrying a blank key of the vehicle's side. The shared motor pool.
+[*][b]The owner's squad[/b] - the owner's squad, carrying a blank key of the side. A squad's own truck.
+[*][b]Paired keys only[/b] - only keys cut to that vehicle. The owner's key is cut as it locks. A command car nobody borrows.
+[/list]
+
+Your unit chooses which of the three are allowed. Leave one on to enforce one way of working, or leave all three on and let the player who locks a vehicle decide.
+
+[h2]What it adds[/h2]
+[list]
+[*][b]Spare keys[/b]. Cut a blank key to a vehicle and hand it to someone. A spare always costs a blank key.
+[*][b]Change locks[/b]. Every key cut for the vehicle stops fitting, spares included, when one goes missing.
+[*][b]Master keys[/b], one per side. Opens and manages every vehicle of that side however it is locked, for Zeus, command and the motor pool. Can be hidden from the Arsenal.
+[*][b]Key fobs[/b]. Program one to a vehicle and lock it from across the parking area, with a chirp.
+[*][b]Key bindings[/b]. Lock or unlock the nearest vehicle your keys open without opening a menu, plus three key slots for chosen keys.
+[*][b]Ignition lock[/b]. No key, no engine, even sitting in the driver's seat.
+[*][b]Locked cargo[/b]. A locked vehicle's inventory stays shut to anyone whose keys do not fit.
+[*][b]Inside handle[/b]. Anyone in a seat can lock and unlock, like a real car door.
+[*][b]Hand over key[/b]. An ACE action on another player, so nobody swaps inventories.
+[*][b]Inspect and label[/b]. See exactly which vehicles a key opens, and name it, so a crate of motor pool keys stays readable.
+[*][b]Lockpicking[/b]. A lock pick kit opens a vehicle your keys do not fit.
+[*][b]Hotwiring[/b]. Sitting in a vehicle you have no key for, hotwire it from the driver's seat. Picked and hotwired vehicles start without a key until someone locks them again.
+[*][b]Vehicle types[/b]. Choose which kinds of vehicle use keys at all: cars, wheeled APCs, tanks, helicopters, planes, boats.
+[/list]
+
+[h2]Keys are items, and they stay items[/h2]
+A key carries its cut in the item itself, so it survives being dropped, stored in a crate, handed to someone, saved in an Arsenal loadout and respawning. Take an enemy's key off a body and it opens their vehicles: keys belong to a side, not to a player.
+
+[h2]Lockpicking[/h2]
+Without TLB Interactions, picking a lock is a progress bar, the way ACE does it. With [b]TLB Interactions[/b] loaded, the same action opens its lockpicking board and you pick the lock by hand, with a kit or a paperclip.
+
+The tool follows whatever you run. TLB Keys ships its own lock pick kit for servers with neither mod, uses TSP Breach's kit when that is loaded, and hides its own so nobody ever carries two lock pick kits.
+
+[h2]For mission makers[/h2]
+[list]
+[*][b]Key Set module[/b]. Sync vehicles, crates and units: the vehicles are locked to the set, the crates hold its keys, the synced units spawn carrying one. Two modules with the same name share one set of keys.
+[*][b]Master Key module[/b]. Synced units start with a master key for their side.
+[*][b]Eden attributes[/b] on every vehicle: who it opens for, whose side it is, which key set it belongs to, whether it starts locked and whether its lock can be picked.
+[*][b]Zeus modules[/b]. Lock or unlock a vehicle, strip its keys, drop a key for it, or hand a unit a master key.
+[*][b]Scripting[/b]. Public functions to assign keys, hand them out and check who has access.
+[/list]
+
+[h2]Settings[/h2]
+Around 40 settings under [b]TLB Keys[/b] in the CBA settings menu, all server-forced: which lock modes are allowed, who may lock a vehicle first, who may manage one, spare keys, master keys, key fobs, lockpicking, key bindings, the ignition and inventory locks, and which vehicle types use keys at all.
+
+[h2]Dedicated servers[/h2]
+The mod is signed. Copy [b]TLBKeys01.bikey[/b] into your server's [i]keys[/i] folder, and load the mod on the server and on every client.
+
+[h2]Documentation[/h2]
+Full documentation lives on the GitHub wiki:
+[list]
+[*][url=https://github.com/TLB-MilSim/TLB-Keys/wiki/Quick-Start]Quick start[/url] - your first key and your first locked vehicle, in five steps
+[*][url=https://github.com/TLB-MilSim/TLB-Keys/wiki/Player-Guide]Player guide[/url] - every feature, step by step, with screenshots and worked examples
+[*][url=https://github.com/TLB-MilSim/TLB-Keys/wiki/Key-Fobs-and-Key-Bindings]Key fobs and key bindings[/url] - programming fobs, the three key slots, locking without a menu
+[*][url=https://github.com/TLB-MilSim/TLB-Keys/wiki/Mission-Making]Mission making[/url] - modules, Eden attributes, Zeus modules and scripting
+[*][url=https://github.com/TLB-MilSim/TLB-Keys/wiki/Settings]Settings[/url] - every setting, its default and what it changes
+[*][url=https://github.com/TLB-MilSim/TLB-Keys/wiki/Troubleshooting]Troubleshooting[/url] - what to do when a key does not fit
+[*][url=https://github.com/TLB-MilSim/TLB-Keys/wiki/How-It-Works]How it works[/url] - for developers
+[/list]
+
+[h2]Source and issues[/h2]
+Full source and downloads:
 [url=https://github.com/TLB-MilSim/TLB-Keys]github.com/TLB-MilSim/TLB-Keys[/url]
 
-[h1]Licence[/h1]
-Licensed under the [url=https://www.bohemia.net/community/licenses/arma-public-license-nd]Arma Public License No Derivatives (APL-ND)[/url]. Share it unmodified, for non-commercial use, with attribution.
+Bug reports and suggestions are welcome on the GitHub issue tracker.
 
-Made by TLB MilSim. All code, icons and sounds are original work. ACE3 and CBA_A3 are used through their public APIs only.
+[h2]About TLB MilSim[/h2]
+We are a MilSim unit, and this mod was built mainly for our own operations. We are sharing it with the rest of the community in case it is useful to anyone else, and because we would like to hear suggestions and ideas for improvements.
+
+If you have one, or you hit a problem, come and tell us on our Discord.
+
+[url=https://discord.gg/TLBMilSim]discord.gg/TLBMilSim[/url]
+
+[h2]Licence[/h2]
+Released under the [b]Arma Public Licence No Derivatives (APL-ND)[/b].
+
+Use it on your server and in your missions freely, and share it unmodified. You may not sell it, use it outside Arma, or distribute a modified or repackaged version, which includes bundling it inside another mod or reskinning it under different branding. The TLB name and logo are not covered by the licence.
+
+If you want to do something the licence does not allow, just ask us on Discord. We are much more likely to say yes than you might expect.
+
+[h2]Credits[/h2]
+Built for [b]TLB MilSim[/b].
+
+All code, icons and sounds are original work. ACE3 and CBA_A3 are used through their public APIs only, and no code or assets from either are included.

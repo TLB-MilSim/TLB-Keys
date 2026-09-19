@@ -14,6 +14,28 @@
 //
 // tlb_keys_type: "key", "master" or "fob". tlb_keys_side: 0 OPFOR, 1 BLUFOR,
 // 2 Independent, 3 Civilian (the numbers of BIS_fnc_sideID), -1 for none.
+//
+// The lock pick kit is the tool for picking a vehicle's lock when no other mod
+// provides one. With TLB Interactions or TSP Breach loaded, their kits are used
+// instead, so ours still exists (saved loadouts keep working) but is hidden from
+// the Arsenal, Zeus and the editor - nobody ever sees two lock pick kits.
+//
+// The engine answers __has_include when it loads this config, so tools\build.ps1
+// ships this file as plain text rather than binarising it: a binarised config
+// would freeze whatever the build machine had installed.
+
+// Arma's preprocessor has no #elif, so each mod is asked in its own block.
+#define TLB_KEYS_PICK_SCOPE 2
+
+#if __has_include("\tlbi\addons\lockpick\script_component.hpp")
+    #undef TLB_KEYS_PICK_SCOPE
+    #define TLB_KEYS_PICK_SCOPE 1
+#endif
+
+#if __has_include("\tsp_breach\functions.sqf")
+    #undef TLB_KEYS_PICK_SCOPE
+    #define TLB_KEYS_PICK_SCOPE 1
+#endif
 
 class CfgPatches {
     class tlb_keys_items {
@@ -21,14 +43,14 @@ class CfgPatches {
         author = "TLB";
         url = "https://github.com/TLB-MilSim/TLB-Keys";
         units[] = {};
-        weapons[] = {};
+        weapons[] = {"tlb_keys_lockpick"};
         magazines[] = {
             "tlb_keys_key_west", "tlb_keys_key_east", "tlb_keys_key_indep", "tlb_keys_key_civ",
             "tlb_keys_master_west", "tlb_keys_master_east", "tlb_keys_master_indep", "tlb_keys_master_civ",
             "tlb_keys_fob"
         };
         requiredVersion = 2.14;
-        requiredAddons[] = {"A3_Weapons_F", "tlb_keys_main", "cba_main"};
+        requiredAddons[] = {"A3_Weapons_F", "tlb_keys_main", "cba_main", "cba_common"};
         version = VERSION_STR;
         versionStr = QUOTE(VERSION_STR);
         versionAr[] = {VERSION_AR};
@@ -107,5 +129,24 @@ class CfgMagazines {
         mass = 0.2;
         tlb_keys_type = "fob";
         tlb_keys_side = -1;
+    };
+};
+
+class CfgWeapons {
+    class CBA_MiscItem;
+    class CBA_MiscItem_ItemInfo;
+
+    class tlb_keys_lockpick: CBA_MiscItem {
+        scope = TLB_KEYS_PICK_SCOPE;
+        scopeArsenal = TLB_KEYS_PICK_SCOPE;
+        scopeCurator = TLB_KEYS_PICK_SCOPE;
+        author = "TLB";
+        displayName = "$STR_tlb_keys_items_lockpick";
+        descriptionShort = "$STR_tlb_keys_items_lockpick_desc";
+        picture = "\tlb_keys\addons\items\data\lockpick_ca.paa";
+
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 4;
+        };
     };
 };

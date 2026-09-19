@@ -49,9 +49,12 @@ tlb_keys_core_allowFobs = true;
 tlb_keys_core_fobRange = 15;
 tlb_keys_core_fobSound = true;
 tlb_keys_core_lockpickEnabled = true;
-tlb_keys_core_useTlbi = true;
+tlb_keys_core_useTsp = true;
+tlb_keys_core_useTlbiItems = true;
 tlb_keys_core_lockpickTime = 20;
 tlb_keys_core_hotwire = true;
+tlb_keys_core_allowHotwire = true;
+tlb_keys_core_hotwireTime = 25;
 tlb_keys_core_vehCars = true;
 tlb_keys_core_vehApcs = true;
 tlb_keys_core_vehTanks = true;
@@ -112,9 +115,12 @@ private _fnc_add = {
 
 // --- Lockpicking ------------------------------------------------------------
 ["lockpickEnabled", "CHECKBOX", "pick", true] call _fnc_add;
-["useTlbi", "CHECKBOX", "pick", true] call _fnc_add;
+["useTsp", "CHECKBOX", "pick", true] call _fnc_add;
+["useTlbiItems", "CHECKBOX", "pick", true] call _fnc_add;
 ["lockpickTime", "SLIDER", "pick", [1, 120, 20, 0]] call _fnc_add;
 ["hotwire", "CHECKBOX", "pick", true] call _fnc_add;
+["allowHotwire", "CHECKBOX", "pick", true] call _fnc_add;
+["hotwireTime", "SLIDER", "pick", [5, 300, 25, 0]] call _fnc_add;
 
 // --- Vehicle types ----------------------------------------------------------
 // Which kinds of vehicle use keys at all (fn_isKeyed).

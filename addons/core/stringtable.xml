@@ -221,17 +221,35 @@
             <Key ID="STR_tlb_keys_core_set_lockpickEnabled_desc">
                 <English>Locked vehicles can be picked. A vehicle whose Eden attribute says it cannot be picked, or whose ace_vehiclelock_lockpickStrength is -1, never can.</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_set_useTlbi">
-                <English>Use TLB Interactions</English>
+            <Key ID="STR_tlb_keys_core_set_useTsp">
+                <English>Use TSP Breach's lock pick kits</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_set_useTlbi_desc">
-                <English>With TLB Interactions loaded, vehicle locks are picked on its lockpicking board with a lock pick kit or a paperclip. Off, or without it, ACE's lockpick is used.</English>
+            <Key ID="STR_tlb_keys_core_set_useTsp_desc">
+                <English>TSP Breach's lock pick kit and paperclip pick vehicle locks when that mod is loaded. Off: they do not, and players need another kit.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_useTlbiItems">
+                <English>Use TLB Interactions' lock pick kits</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_useTlbiItems_desc">
+                <English>TLB Interactions' lock pick kit and paperclip pick vehicle locks when that mod is loaded. Off: they do not, and players need another kit. Whether its lockpicking board handles vehicles at all is TLB Interactions' own setting.</English>
             </Key>
             <Key ID="STR_tlb_keys_core_set_lockpickTime">
                 <English>ACE lockpick time (s)</English>
             </Key>
             <Key ID="STR_tlb_keys_core_set_lockpickTime_desc">
                 <English>How long picking a lock with ACE's lockpick takes, unless the vehicle sets its own ace_vehiclelock_lockpickStrength.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowHotwire">
+                <English>Allow hotwiring</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_allowHotwire_desc">
+                <English>A driver whose keys do not fit can hotwire the vehicle they are sitting in. It then starts without a key until someone with a key locks it again.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_hotwireTime">
+                <English>Hotwire time (s)</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_set_hotwireTime_desc">
+                <English>How long hotwiring takes from the driver's seat.</English>
             </Key>
             <Key ID="STR_tlb_keys_core_set_hotwire">
                 <English>Picked vehicles can be driven</English>
@@ -365,17 +383,14 @@
             <Key ID="STR_tlb_keys_core_action_pick">
                 <English>Pick lock</English>
             </Key>
-            <Key ID="STR_tlb_keys_core_action_pickKit">
-                <English>With lock pick kit</English>
-            </Key>
-            <Key ID="STR_tlb_keys_core_action_pickClip">
-                <English>With paperclip</English>
-            </Key>
-            <Key ID="STR_tlb_keys_core_action_pickAce">
-                <English>With lockpick</English>
+            <Key ID="STR_tlb_keys_core_action_pickWith">
+                <English>With %1</English>
             </Key>
             <Key ID="STR_tlb_keys_core_action_check">
                 <English>Check lock</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_action_hotwire">
+                <English>Hotwire</English>
             </Key>
             <Key ID="STR_tlb_keys_core_action_mode">
                 <English>Opens for: %1</English>
@@ -427,6 +442,9 @@
             </Key>
             <Key ID="STR_tlb_keys_core_progress_picking">
                 <English>Picking the lock...</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_progress_hotwire">
+                <English>Hotwiring...</English>
             </Key>
             <Key ID="STR_tlb_keys_core_rename_code">
                 <English>Label this key</English>
@@ -616,6 +634,9 @@
             </Key>
             <Key ID="STR_tlb_keys_core_msg_picked">
                 <English>%1: lock picked.</English>
+            </Key>
+            <Key ID="STR_tlb_keys_core_msg_hotwired">
+                <English>%1 hotwired: it starts without a key.</English>
             </Key>
             <Key ID="STR_tlb_keys_core_msg_bound">
                 <English>%1 is in key slot %2.</English>

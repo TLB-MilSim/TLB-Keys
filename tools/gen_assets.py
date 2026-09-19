@@ -185,6 +185,43 @@ def item_key(name, colours, tag, master=False):
     return save(img, 256, "items", name, shadow=True)
 
 
+def item_lockpick():
+    """The lock pick kit: picks fanned out of a leather pouch, with a tension
+    wrench across the front. Used when TLB Interactions is not loaded."""
+    W = 256 * SS
+    s = W / 256
+    img = canvas(256)
+    metal, dark, _ = STEEL
+
+    for angle, kind in ((-34, "hook"), (-14, "rake"), (6, "diamond"), (26, "hook")):
+        layer = Image.new("RGBA", (W, W), CLEAR)
+        ld = ImageDraw.Draw(layer)
+        x = 128 * s
+        ld.rectangle([x - 5 * s, 40 * s, x + 5 * s, 190 * s], fill=dark)
+        ld.rectangle([x - 3 * s, 42 * s, x + 3 * s, 190 * s], fill=metal)
+        if kind == "hook":
+            ld.line([(x, 44 * s), (x - 12 * s, 30 * s), (x - 14 * s, 20 * s)], fill=metal, width=int(6 * s), joint="curve")
+        elif kind == "rake":
+            ld.line([(x, 44 * s), (x - 8 * s, 36 * s), (x, 28 * s), (x - 8 * s, 20 * s), (x, 12 * s)], fill=metal, width=int(5 * s), joint="curve")
+        else:
+            ld.polygon([(x - 3 * s, 44 * s), (x - 12 * s, 26 * s), (x + 3 * s, 18 * s), (x + 3 * s, 44 * s)], fill=metal)
+        img = Image.alpha_composite(img, layer.rotate(-angle, resample=Image.BICUBIC, center=(128 * s, 200 * s)))
+
+    d = ImageDraw.Draw(img)
+    # Tension wrench across the front.
+    d.line([(58 * s, 150 * s), (58 * s, 128 * s), (150 * s, 128 * s)], fill=(40, 40, 42, 255), width=int(10 * s), joint="curve")
+    d.line([(58 * s, 150 * s), (58 * s, 128 * s), (150 * s, 128 * s)], fill=(150, 152, 150, 255), width=int(6 * s), joint="curve")
+    # Leather pouch.
+    d.rounded_rectangle([40 * s, 150 * s, 216 * s, 236 * s], radius=int(14 * s), fill=(58, 38, 24, 255))
+    d.rounded_rectangle([46 * s, 156 * s, 210 * s, 230 * s], radius=int(10 * s), outline=(120, 86, 52, 255), width=int(3 * s))
+    d.rounded_rectangle([40 * s, 150 * s, 216 * s, 172 * s], radius=int(8 * s), fill=(76, 52, 32, 255))
+    for i in range(14):
+        xx = (54 + i * 11.5) * s
+        d.line([(xx, 162 * s), (xx + 5 * s, 162 * s)], fill=(150, 116, 72, 255), width=int(2 * s))
+
+    return save(img, 256, "items", "lockpick_ca", shadow=True)
+
+
 def item_fob():
     W = 256 * SS
     s = W / 256
@@ -371,6 +408,7 @@ if __name__ == "__main__":
         items.append(item_key("key_%s_ca" % side, STEEL, colour))
         items.append(item_key("master_%s_ca" % side, BRASS, colour, master=True))
     items.append(item_fob())
+    items.append(item_lockpick())
     items += [icon_key(), icon_master(), icon_give(), icon_lock("icon_lock_ca", False),
               icon_lock("icon_unlock_ca", True), icon_fob(), icon_pick()]
     items += [module_keyset(), module_master(), module_lock()]
