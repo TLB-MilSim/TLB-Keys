@@ -45,7 +45,7 @@ those keys around or using them faster.
 
 ## The keys
 
-<img src="images/items.png" alt="The key items" width="820">
+<img src="images/items.png" alt="The key items">
 
 | Item | What it opens |
 | --- | --- |
@@ -115,7 +115,7 @@ keys fit.
 
 *Name vehicle* opens a text box, and the name follows every key cut for it:
 
-<img src="images/name-vehicle.jpg" alt="Name this vehicle: M1165A1 GMV (SAG-2/Mk19/M240)" width="640">
+<img src="images/name-vehicle.jpg" alt="Name this vehicle: M1165A1 GMV (SAG-2/Mk19/M240)">
 
 ## Your own keys
 
@@ -231,7 +231,7 @@ no lock left to pick, and the engine still will not start. Sit in the driver's
 seat and use *Vehicle Keys → Hotwire* (ACE self-interaction). After about
 25 seconds it starts without a key, until someone with a key locks it again.
 
-<img src="images/hotwire-progress.png" alt="Hotwiring... Time left: 23s" width="820">
+<img src="images/hotwire-progress.png" alt="Hotwiring... Time left: 23s">
 
 That is how you drive off in a vehicle you found open, or one a team mate
 unlocked for you and then left.
