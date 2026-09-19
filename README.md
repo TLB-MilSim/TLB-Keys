@@ -22,6 +22,10 @@
 </p>
 
 <p align="center">
+  <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
+</p>
+
+<p align="center">
   <img src="docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key">
 </p>
 
@@ -31,10 +35,6 @@
 
 <p align="center">
   <img src="docs/images/my-keys-menu.jpg" alt="The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key">
-</p>
-
-<p align="center">
-  <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
 </p>
 
 <p align="center">

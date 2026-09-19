@@ -43,7 +43,6 @@ LINKS = {
 
 # Screenshots dropped in under a heading of the player guide.
 SHOTS = {
-    "## The keys": ("keys-in-the-arsenal.png", "The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side"),
     "## Locking a vehicle for the first time": ("lock-a-vehicle.jpg", "Lock for BLUFOR, Lock for my squad, Lock to my key and Check lock"),
     "## Managing a vehicle": ("manage-keys.jpg", "Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle"),
     "## Your own keys": ("my-keys-menu.jpg", "The player's Vehicle Keys menu: two programmed fobs in key slots, a master key and a blank vehicle key"),

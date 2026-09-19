@@ -47,6 +47,8 @@ those keys around or using them faster.
 
 <img src="images/items.png" alt="The key items">
 
+<img src="images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
+
 | Item | What it opens |
 | --- | --- |
 | **Vehicle Key (side)**, blank | Vehicles of that side locked *for the side*, and *for the squad* when you are in the vehicle's squad. This is the key you take from the Arsenal. |
