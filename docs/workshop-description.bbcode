@@ -9,7 +9,8 @@ Vehicle keys that your players manage in the field. Lock a vehicle for [b]your w
 [*][b]CBA_A3[/b]
 [*][b]ACE3[/b], built and tested against 3.21.2
 [*]Arma 3 v2.14 or newer
-[*][b]TLB Interactions[/b], optional. With it loaded, vehicle locks are picked on its hands-on lockpicking board
+[*][b]TLB Interactions[/b], optional. With it loaded, vehicle locks are picked on its hands-on lockpicking board, using its lock pick kit and paperclip
+[*][b]TSP Breach[/b], optional. Its lock pick kit and paperclip pick vehicle locks as well
 [/list]
 
 [h2]Why[/h2]
@@ -46,10 +47,12 @@ Your unit chooses which of the three are allowed. Leave one on to enforce one wa
 [h2]Keys are items, and they stay items[/h2]
 A key carries its cut in the item itself, so it survives being dropped, stored in a crate, handed to someone, saved in an Arsenal loadout and respawning. Take an enemy's key off a body and it opens their vehicles: keys belong to a side, not to a player.
 
-[h2]Lockpicking[/h2]
-Without TLB Interactions, picking a lock is a progress bar, the way ACE does it. With [b]TLB Interactions[/b] loaded, the same action opens its lockpicking board and you pick the lock by hand, with a kit or a paperclip.
+[h2]Lockpicking and hotwiring[/h2]
+A locked vehicle whose keys you do not have can be picked. Without TLB Interactions that is a progress bar, the way ACE does it. With [b]TLB Interactions[/b] loaded, the same action opens its lockpicking board and you pick the lock by hand.
 
-The tool follows whatever you run. TLB Keys ships its own lock pick kit for servers with neither mod, uses TSP Breach's kit when that is loaded, and hides its own so nobody ever carries two lock pick kits.
+[b]It works with the mods you already run.[/b] TLB Keys uses TLB Interactions' and TSP Breach's own lock pick kits and paperclips when either mod is loaded, and hides its own kit so nobody ever carries two. Run neither, and its kit is there in the Arsenal. Each mod's tools can be switched off in the settings, and ACE's lockpick works throughout.
+
+Already inside a vehicle you have no key for? There is no lock left to pick, so [b]hotwire[/b] it from the driver's seat instead. Picked and hotwired vehicles start without a key until someone with a key locks them again.
 
 [h2]For mission makers[/h2]
 [list]

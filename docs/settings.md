@@ -83,8 +83,8 @@ on to force it. Leave several on and the first player to lock a vehicle chooses.
 | Vehicle lockpicking | `tlb_keys_core_lockpickEnabled` | on | on / off | Locked vehicles can be picked with a lock pick kit (TLB Keys', TLB Interactions' kit or paperclip, or ACE's lockpick). Never for vehicles marked as not pickable, or with `ace_vehiclelock_lockpickStrength` -1. |
 | Use TSP Breach's lock pick kits | `tlb_keys_core_useTsp` | on | on / off | TSP Breach's kit and paperclip pick vehicle locks when that mod is loaded. |
 | Use TLB Interactions' lock pick kits | `tlb_keys_core_useTlbiItems` | on | on / off | TLB Interactions' kit and paperclip pick vehicle locks when that mod is loaded. |
-| Lockpick time (s) | `tlb_keys_core_lockpickTime` | 20 | 1 to 120 | How long the progress bar takes without TLB Interactions, unless the vehicle sets `ace_vehiclelock_lockpickStrength`. |
-| Picked vehicles can be driven | `tlb_keys_core_hotwire` | on | on / off | A picked vehicle is hotwired: the ignition lock lets it start until someone with a key locks it again. |
+| Lockpick time (s) | `tlb_keys_core_lockpickTime` | 20 | 1 to 120 | How long picking takes with any kit, unless the vehicle sets `ace_vehiclelock_lockpickStrength`. Ignored on TLB Interactions' board, where the lock itself decides. |
+| Picked and hotwired vehicles can be driven | `tlb_keys_core_hotwire` | on | on / off | Picking a lock or hotwiring lets the vehicle start without a key, until someone with a key locks it again. Off: picking only opens the doors, and hotwiring is not offered. |
 | Allow hotwiring | `tlb_keys_core_allowHotwire` | on | on / off | A driver whose keys do not fit can hotwire the vehicle they are sitting in, from the driver's seat. It then starts without a key until someone with a key locks it again. |
 | Hotwire time (s) | `tlb_keys_core_hotwireTime` | 25 | 5 to 300 | How long hotwiring takes. |
 

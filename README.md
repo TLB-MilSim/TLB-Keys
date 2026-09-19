@@ -69,7 +69,8 @@ one way of using keys or all of them.
 | Arma 3 | v2.14 or newer |
 | [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997) | required |
 | [ACE3](https://steamcommunity.com/workshop/filedetails/?id=463939057) | required |
-| [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions) | optional: vehicle locks are picked on its lockpicking board |
+| [TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions) | optional: vehicle locks are picked on its lockpicking board, with its lock pick kit and paperclip |
+| [TSP Breach](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995) | optional: its lock pick kit and paperclip pick vehicle locks too |
 
 ## Installation
 
@@ -131,9 +132,13 @@ troubleshooting page.
   giving it keys starts unlocked, unless the settings say otherwise.
 - **Vehicle types switched off** are left entirely to vanilla and ACE, with
   ACE's own lock actions back on them.
-- **[TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions):**
-  detected automatically; its lock pick kit and paperclip open vehicles on its
-  board.
+- **[TLB Interactions](https://github.com/TLB-MilSim/TLB-Interactions) and
+  [TSP Breach](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995):**
+  both are detected automatically, and their lock pick kits and paperclips pick
+  vehicle locks, so nobody needs a second kit. TLB Keys' own kit is hidden from
+  the Arsenal while either mod is loaded, and each one can be turned off in the
+  settings. With TLB Interactions, picking happens on its board; whether it
+  handles vehicles at all is its own *Pick vehicle locks* setting.
 
 ## Licence
 
