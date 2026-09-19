@@ -21,6 +21,16 @@
   <img src="docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob" width="820">
 </p>
 
+<p align="center">
+  <img src="docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key" width="410">
+  <img src="docs/images/manage-keys.jpg" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle" width="410">
+</p>
+
+<p align="center">
+  <img src="docs/images/my-keys-menu.jpg" alt="The player's own keys: a master key, a cut vehicle key and a key fob" width="410">
+  <img src="docs/images/keys-in-the-arsenal.jpg" alt="Key Fob, Master Key and Vehicle Key in a crate" width="410">
+</p>
+
 ---
 
 ## What's new in 1.0.1
