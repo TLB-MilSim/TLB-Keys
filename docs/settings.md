@@ -11,6 +11,8 @@ defaults, so check them after updating the mod.
 The *Variable* column is the CBA setting name, for `cba_settings.sqf` and mission
 settings files.
 
+<img src="images/settings.png" alt="Addon Options, TLB Keys: the General, Key bindings and Key fobs settings" width="820">
+
 - [General](#general)
 - [Locking a vehicle](#locking-a-vehicle)
 - [Keys and management](#keys-and-management)
