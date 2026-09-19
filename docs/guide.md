@@ -47,8 +47,6 @@ those keys around or using them faster.
 
 <img src="images/items.png" alt="The key items">
 
-<img src="images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
-
 | Item | What it opens |
 | --- | --- |
 | **Vehicle Key (side)**, blank | Vehicles of that side locked *for the side*, and *for the squad* when you are in the vehicle's squad. This is the key you take from the Arsenal. |
@@ -56,6 +54,8 @@ those keys around or using them faster.
 | **Master Key (side)** | Every vehicle of that side, however it is locked, and it manages them too. |
 | **Key Fob**, blank | Nothing, until it is programmed at a vehicle. |
 | **Key Fob**, programmed | The vehicles it was programmed to, up close or from a distance. |
+
+<img src="images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
 
 A few things worth knowing:
 

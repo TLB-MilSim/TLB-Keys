@@ -22,10 +22,6 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
-</p>
-
-<p align="center">
   <img src="docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key">
 </p>
 
@@ -129,6 +125,9 @@ into your mods folder.
 
 1. **Get a key.** Take a *Vehicle Key* for your side from the Arsenal, or from a
    crate the mission maker filled.
+
+   <img src="docs/images/keys-in-the-arsenal.png" alt="The ACE Arsenal list: Key Fob, master keys and vehicle keys for each side">
+
 2. **Lock a vehicle.** ACE interaction on the vehicle → *Vehicle Keys* → *Lock
    for BLUFOR*, *Lock for my squad* or *Lock to my key*. You are now its owner.
 3. **Manage it.** *Vehicle Keys → Manage keys* changes who it opens for, cuts
