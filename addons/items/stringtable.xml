@@ -44,7 +44,7 @@
                 <English>Lock Pick Kit</English>
             </Key>
             <Key ID="STR_tlb_keys_items_lockpick_desc">
-                <English>Tension wrench, hook pick and rake. Picks the lock of a vehicle your keys do not fit. With TLB Interactions loaded, use its own lock pick kit or paperclip instead.</English>
+                <English>Tension wrench, hook pick and rake. Picks the lock of a vehicle your keys do not fit. With TLB Interactions or TSP Breach loaded, their lock pick kits are used instead of this one.</English>
             </Key>
         </Container>
     </Package>

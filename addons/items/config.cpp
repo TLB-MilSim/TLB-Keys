@@ -15,16 +15,18 @@
 // tlb_keys_type: "key", "master" or "fob". tlb_keys_side: 0 OPFOR, 1 BLUFOR,
 // 2 Independent, 3 Civilian (the numbers of BIS_fnc_sideID), -1 for none.
 //
-// The lock pick kit is the tool for picking a vehicle's lock without TLB
-// Interactions. With that mod loaded its own kit and paperclip are used
-// instead, so ours still exists (saved loadouts keep working) but is hidden
-// from the Arsenal, Zeus and the editor.
+// The lock pick kit is the tool for picking a vehicle's lock when no other mod
+// provides one. With TLB Interactions or TSP Breach loaded, their kits are used
+// instead, so ours still exists (saved loadouts keep working) but is hidden from
+// the Arsenal, Zeus and the editor - nobody ever sees two lock pick kits.
 //
 // The engine answers __has_include when it loads this config, so tools\build.ps1
 // ships this file as plain text rather than binarising it: a binarised config
 // would freeze whatever the build machine had installed.
 
 #if __has_include("\tlbi\addons\lockpick\script_component.hpp")
+    #define TLB_KEYS_PICK_SCOPE 1
+#elif __has_include("\tsp_breach\functions.sqf")
     #define TLB_KEYS_PICK_SCOPE 1
 #else
     #define TLB_KEYS_PICK_SCOPE 2
