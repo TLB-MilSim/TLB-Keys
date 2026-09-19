@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """Builds the GitHub wiki pages from this repository.
 
+Images come from docs/images in the repository, so a screenshot is added once
+and both the wiki and the Steam Workshop description can use it.
+
     python tools/build_wiki.py [output folder]
 
 The pages that are the same as the repository's documentation are generated
@@ -15,7 +18,7 @@ https://github.com/TLB-MilSim/TLB-Keys.wiki.git to publish:
     python tools/build_wiki.py TLB-Keys.wiki
     cd TLB-Keys.wiki && git add -A && git commit && git push
 
-Screenshots live in the wiki clone's images/ folder and are left alone.
+Screenshots are read from the repository, so the wiki clone needs no images.
 """
 import os
 import re
@@ -25,7 +28,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC = os.path.join(ROOT, "tools", "wiki")
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, ".wiki-build")
-RAW = "https://raw.githubusercontent.com/wiki/TLB-MilSim/TLB-Keys/images/"
+RAW = "https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/"
 
 # Documentation links become wiki page links.
 LINKS = {

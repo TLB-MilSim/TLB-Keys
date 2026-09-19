@@ -8,7 +8,7 @@ everything in detail.
 Take a **Vehicle Key** for your side from the ACE Arsenal, or from a crate the
 mission maker filled. Master keys and key fobs sit next to it.
 
-<img src="https://raw.githubusercontent.com/wiki/TLB-MilSim/TLB-Keys/images/keys-in-the-arsenal.jpg" alt="Key Fob, Master Key (BLUFOR) and Vehicle Key (BLUFOR) in a crate" width="820">
+<img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/keys-in-the-arsenal.jpg" alt="Key Fob, Master Key (BLUFOR) and Vehicle Key (BLUFOR) in a crate" width="820">
 
 A key straight from the Arsenal is **blank**: it opens vehicles of its side that
 are locked for the side, or for your squad.
@@ -17,7 +17,7 @@ are locked for the side, or for your squad.
 
 Walk up to a vehicle nobody has locked. ACE interaction → **Vehicle Keys**:
 
-<img src="https://raw.githubusercontent.com/wiki/TLB-MilSim/TLB-Keys/images/lock-a-vehicle.jpg" alt="Lock for BLUFOR, Lock for my squad, Lock to my key and Check lock" width="820">
+<img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/lock-a-vehicle.jpg" alt="Lock for BLUFOR, Lock for my squad, Lock to my key and Check lock" width="820">
 
 | Choice | Who gets in afterwards |
 | --- | --- |
@@ -31,7 +31,7 @@ You are now the vehicle's owner.
 
 Back in **Vehicle Keys → Manage keys**:
 
-<img src="https://raw.githubusercontent.com/wiki/TLB-MilSim/TLB-Keys/images/manage-keys.jpg" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle" width="820">
+<img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/manage-keys.jpg" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle" width="820">
 
 - **Opens for…** switches between the three modes.
 - **Cut keys** makes spare keys and programs key fobs.
@@ -42,7 +42,7 @@ Back in **Vehicle Keys → Manage keys**:
 
 ACE self-interaction → **Vehicle Keys** lists everything you carry:
 
-<img src="https://raw.githubusercontent.com/wiki/TLB-MilSim/TLB-Keys/images/my-keys-menu.jpg" alt="The player's own Vehicle Keys menu listing a master key, a cut vehicle key and a key fob" width="820">
+<img src="https://raw.githubusercontent.com/TLB-MilSim/TLB-Keys/main/docs/images/my-keys-menu.jpg" alt="The player's own Vehicle Keys menu listing a master key, a cut vehicle key and a key fob" width="820">
 
 **Inspect** any key to see what it opens right now. Cut keys show their code and
 the vehicle's name, so a crate of motor pool keys stays readable.
