@@ -24,12 +24,17 @@
 // ships this file as plain text rather than binarising it: a binarised config
 // would freeze whatever the build machine had installed.
 
+// Arma's preprocessor has no #elif, so each mod is asked in its own block.
+#define TLB_KEYS_PICK_SCOPE 2
+
 #if __has_include("\tlbi\addons\lockpick\script_component.hpp")
+    #undef TLB_KEYS_PICK_SCOPE
     #define TLB_KEYS_PICK_SCOPE 1
-#elif __has_include("\tsp_breach\functions.sqf")
+#endif
+
+#if __has_include("\tsp_breach\functions.sqf")
+    #undef TLB_KEYS_PICK_SCOPE
     #define TLB_KEYS_PICK_SCOPE 1
-#else
-    #define TLB_KEYS_PICK_SCOPE 2
 #endif
 
 class CfgPatches {
