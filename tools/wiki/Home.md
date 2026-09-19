@@ -9,6 +9,11 @@
   <strong>Lock it for your side, your squad, or one key.</strong>
 </p>
 
+<p align="center">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3804583982">Steam Workshop</a> ·
+  <a href="https://youtu.be/d6jac-rj0Bs">Demo video</a>
+</p>
+
 ---
 
 ACE's vehicle keys open every vehicle of a side, and there is no good way to

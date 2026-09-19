@@ -10,6 +10,8 @@
 </p>
 
 <p align="center">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3804583982">Steam Workshop</a> ·
+  <a href="https://youtu.be/d6jac-rj0Bs">Demo video</a> ·
   <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/Player-Guide">Player guide</a> ·
   <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/Mission-Making">Mission making</a> ·
   <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/Settings">All settings</a> ·
@@ -106,8 +108,8 @@ one way of using keys or all of them.
 
 ## Installation
 
-**Players:** subscribe on the Steam Workshop, or copy `@TLB Keys` into your Arma
-3 folder, and load it with CBA_A3 and ACE3.
+**Players:** subscribe on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3804583982), or copy `@TLB Keys` into
+your Arma 3 folder, and load it with CBA_A3 and ACE3.
 
 **Servers:**
 
