@@ -1,6 +1,7 @@
 # Build output
 /build/
 /release/
+/.wiki-build/
 
 # Steam Workshop gallery slides, uploaded to Steam rather than kept in the repo
 /workshop/

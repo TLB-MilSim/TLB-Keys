@@ -13,14 +13,36 @@
   <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/Player-Guide">Player guide</a> ·
   <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/Mission-Making">Mission making</a> ·
   <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/Settings">All settings</a> ·
-  <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/How-It-Works">How it works</a>
+  <a href="https://github.com/TLB-MilSim/TLB-Keys/wiki/How-It-Works">How it works</a> ·
+  <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 <p align="center">
   <img src="docs/images/items.png" alt="Vehicle keys for each side, master keys for each side and the key fob" width="820">
 </p>
 
+<p align="center">
+  <img src="docs/images/lock-a-vehicle.jpg" alt="The Vehicle Keys menu on an unlocked vehicle: Lock for BLUFOR, Lock for my squad, Lock to my key" width="410">
+  <img src="docs/images/manage-keys.jpg" alt="Manage keys: Opens for, Cut keys, Change locks, Name vehicle, Release vehicle" width="410">
+</p>
+
+<p align="center">
+  <img src="docs/images/my-keys-menu.jpg" alt="The player's own keys: a master key, a cut vehicle key and a key fob" width="410">
+  <img src="docs/images/keys-in-the-arsenal.jpg" alt="Key Fob, Master Key and Vehicle Key in a crate" width="410">
+</p>
+
 ---
+
+## What's new in 1.0.1
+
+- **Lockpicking** with a lock pick kit, using TLB Interactions' or TSP Breach's
+  kit when either is loaded.
+- **Hotwiring** from the driver's seat of a vehicle you have no key for.
+- **Key bindings** and three **key slots**, to lock up without opening a menu.
+- **Vehicle types**: choose which kinds of vehicle use keys at all.
+- Keys are no longer dropped on the ground when cut, paired or handed over.
+
+See the [changelog](CHANGELOG.md) for the full list.
 
 ## What it is
 
@@ -120,6 +142,7 @@ troubleshooting page.
 | [How it works](https://github.com/TLB-MilSim/TLB-Keys/wiki/How-It-Works) | Developers: how keys store their cut, how access is decided, locality, how ACE is replaced. |
 | [Key fobs and key bindings](https://github.com/TLB-MilSim/TLB-Keys/wiki/Key-Fobs-and-Key-Bindings) | Players: programming fobs, the three key slots, locking without a menu. |
 | [Troubleshooting](https://github.com/TLB-MilSim/TLB-Keys/wiki/Troubleshooting) | Players: what to do when a key does not fit. |
+| [Changelog](CHANGELOG.md) | Everyone: what changed in each version. |
 
 ## Compatibility
 
