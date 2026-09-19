@@ -113,6 +113,10 @@ keys fit.
 | **Give ownership to** | Hands the vehicle and its squad to a player standing nearby. | Keys are not handed over with it: pass those separately. |
 | **Release vehicle** | No keys, no owner, unlocked, as if nobody had locked it. | Keys cut for it keep the old code and fit nothing. |
 
+*Name vehicle* opens a text box, and the name follows every key cut for it:
+
+<img src="images/name-vehicle.jpg" alt="Name this vehicle: M1165A1 GMV (SAG-2/Mk19/M240)" width="640">
+
 ## Your own keys
 
 ACE self-interaction → *Vehicle Keys* lists every key you carry.
@@ -226,6 +230,8 @@ An unlocked vehicle whose keys you do not have is a different problem: there is
 no lock left to pick, and the engine still will not start. Sit in the driver's
 seat and use *Vehicle Keys → Hotwire* (ACE self-interaction). After about
 25 seconds it starts without a key, until someone with a key locks it again.
+
+<img src="images/hotwire-progress.png" alt="Hotwiring... Time left: 23s" width="820">
 
 That is how you drive off in a vehicle you found open, or one a team mate
 unlocked for you and then left.

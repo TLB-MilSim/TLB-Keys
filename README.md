@@ -31,6 +31,11 @@
   <img src="docs/images/keys-in-the-arsenal.jpg" alt="Key Fob, Master Key and Vehicle Key in a crate" width="410">
 </p>
 
+<p align="center">
+  <img src="docs/images/pick-lock.jpg" alt="Vehicle Keys, Pick lock, With Lock Pick Kit on a locked vehicle" width="410">
+  <img src="docs/images/hotwire.jpg" alt="Vehicle Keys, Hotwire from the driver's seat" width="410">
+</p>
+
 ---
 
 ## What's new in 1.0.1
