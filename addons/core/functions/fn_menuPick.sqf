@@ -5,9 +5,10 @@
  *
  * Who owns the choice of tool depends on what is loaded:
  *
- *   TLB Interactions   its board owns picking, and its own settings choose the
- *                      tool - its kit and paperclip, or TSP Breach's. Our kit
- *                      still works for anyone carrying one from before.
+ *   TLB Interactions   it owns picking outright and this menu is empty: its own
+ *                      entries are on the vehicle instead. An older version of
+ *                      it, with the board but no vehicle system, still gets its
+ *                      board driven from here.
  *   otherwise          the "Lock pick kit" setting: TSP Breach's kit, ours, or
  *                      Automatic, which is TSP Breach's when that mod is loaded
  *                      and ours when it is not.
@@ -30,7 +31,12 @@ if (call tlb_keys_core_fnc_deferred) exitWith { [] };
 if (!tlb_keys_core_lockpickEnabled || {!(_veh getVariable ["tlb_keys_pickable", true])}) exitWith { [] };
 if ((_veh getVariable ["ace_vehiclelock_lockpickStrength", tlb_keys_core_lockpickTime]) < 0) exitWith { [] };
 
-private _board = !isNil "tlbi_lockpick_fnc_start"
+// Getting this far means picking is ours to run, so it runs our way, with our
+// tools and our progress bar. The exception is a TLB Interactions old enough to
+// have the board but not its own vehicle system: that pairing still sends
+// picking to its board, which is what those two versions have always done.
+private _board = isNil "tlbi_vehicle_fnc_owns"
+    && {!isNil "tlbi_lockpick_fnc_start"}
     && {missionNamespace getVariable ["tlbi_lockpick_enabled", true]}
     && {missionNamespace getVariable ["tlbi_lockpick_vehicles", true]};
 
