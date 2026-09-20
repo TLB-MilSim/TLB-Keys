@@ -18,6 +18,9 @@
 params ["_veh", "_engineOn"];
 
 if (!_engineOn || {!local _veh} || {!tlb_keys_core_enabled} || {!tlb_keys_core_ignitionLock}) exitWith {};
+
+// TLB Interactions runs its own ignition lock when it owns vehicles.
+if (call tlb_keys_core_fnc_deferred) exitWith {};
 if ((_veh getVariable ["tlb_keys_mode", MODE_NONE]) == MODE_NONE) exitWith {};
 if !([_veh] call tlb_keys_core_fnc_isKeyed) exitWith {};
 if (_veh getVariable ["tlb_keys_hotwired", false]) exitWith {};

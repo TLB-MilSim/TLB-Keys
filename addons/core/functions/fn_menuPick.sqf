@@ -24,6 +24,9 @@
 
 params ["_veh", "_unit"];
 
+// TLB Interactions puts its own entries on the vehicle when it owns picking.
+if (call tlb_keys_core_fnc_deferred) exitWith { [] };
+
 if (!tlb_keys_core_lockpickEnabled || {!(_veh getVariable ["tlb_keys_pickable", true])}) exitWith { [] };
 if ((_veh getVariable ["ace_vehiclelock_lockpickStrength", tlb_keys_core_lockpickTime]) < 0) exitWith { [] };
 

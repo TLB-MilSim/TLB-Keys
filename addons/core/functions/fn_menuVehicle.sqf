@@ -90,6 +90,7 @@ if (!_inside && {_locked} && {_access == ACCESS_NONE} && {([_veh, _unit] call tl
 if (_inside
     && {tlb_keys_core_allowHotwire}
     && {tlb_keys_core_hotwire}
+    && {!(call tlb_keys_core_fnc_deferred)}
     && {_mode != MODE_NONE}
     && {_access == ACCESS_NONE}
     && {!(_veh getVariable ["tlb_keys_hotwired", false])}

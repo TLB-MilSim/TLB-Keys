@@ -2,6 +2,17 @@
 
 [← Back to README](README.md)
 
+## Unreleased
+
+### Changed
+
+- **TLB Interactions owns vehicles when it says so.** With that mod loaded and its
+  *Pick vehicle locks* setting on, it now runs vehicle picking, hotwiring and the
+  ignition lock completely, and TLB Keys stops offering its own picking and
+  hotwiring so there is only ever one of each in the menu. Turn that setting off
+  and TLB Keys keeps its own system and settings. Keys are never handed over: who
+  holds one is still decided here.
+
 ## 1.0.1 (2026-09-19)
 
 ### Added

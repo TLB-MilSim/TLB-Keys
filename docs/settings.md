@@ -80,6 +80,12 @@ on to force it. Leave several on and the first player to lock a vehicle chooses.
 
 ## Lockpicking
 
+With **TLB Interactions** loaded and its *Pick vehicle locks* setting on, that mod
+owns vehicle picking and hotwiring: its board, its difficulty, its hotwiring and
+its ignition lock, and the rows for picking and hotwiring below are ignored. Turn
+that setting off and everything here runs as usual. Who holds a key is always
+decided here either way.
+
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
 | Vehicle lockpicking | `tlb_keys_core_lockpickEnabled` | on | on / off | Locked vehicles can be picked with a lock pick kit (TLB Keys', TLB Interactions' kit or paperclip, or ACE's lockpick). Never for vehicles marked as not pickable, or with `ace_vehiclelock_lockpickStrength` -1. |
