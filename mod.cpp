@@ -1,5 +1,6 @@
 name = "TLB Keys";
 author = "TLB MilSim";
+version = "1.0.2";
 description = "Vehicle keys that fit the mission. Lock a vehicle for your side, your squad or one key, cut spare keys, program key fobs and hand keys to team mates, all from the ACE interaction menu. Replaces ACE's vehicle locking. Requires CBA_A3 and ACE3. Licensed APL-ND.";
 picture = "\tlb_keys\addons\main\data\logo_ca.paa";
 logo = "\tlb_keys\addons\main\data\logo_ca.paa";
