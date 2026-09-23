@@ -24,6 +24,7 @@
 params ["_unit", "_veh"];
 
 if (!tlb_keys_core_allowHotwire || {!tlb_keys_core_hotwire}) exitWith {};
+if (call tlb_keys_core_fnc_deferred) exitWith {};
 if (isNull _veh || {objectParent _unit != _veh}) exitWith {};
 if ((_veh getVariable ["tlb_keys_mode", MODE_NONE]) == MODE_NONE) exitWith {};
 if (_veh getVariable ["tlb_keys_hotwired", false]) exitWith {};

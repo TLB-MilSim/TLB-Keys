@@ -65,6 +65,7 @@ class CfgFunctions {
             // ACE menus
             class menuVehicle {};
             class menuManage {};
+            class deferred {};
             class menuPick {};
             class menuKeys {};
             class menuKey {};
